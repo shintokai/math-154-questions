@@ -1,0 +1,196 @@
+/* =========================================================
+   MATH 154 — Site Styles (full file)
+   ========================================================= */
+
+/* ---------- Theme variables ---------- */
+:root{
+  --bg:#ffffff;
+  --fg:#1a1a1a;
+  --muted:#5f6b7a;
+  --accent:#0b6cff;
+
+  --surface:#fafbff;       /* subtle page/side panel tint */
+  --border:#e6e8ec;
+  --code:#0e1116;
+}
+
+/* ---------- Base ---------- */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+  background:var(--bg);
+  color:var(--fg);
+}
+a{ color:var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+.muted{ color:var(--muted); }
+hr{ border:none; border-top:1px solid var(--border); margin:24px 0; }
+
+/* ---------- Header ---------- */
+.header{
+  position:sticky; top:0; z-index:2;
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
+  padding:18px 24px;
+}
+.title{ margin:0; font-weight:700; }
+.subtitle{ margin:.25rem 0 0; color:var(--muted); }
+
+/* ---------- Layout ---------- */
+.wrap{ display:flex; min-height:100vh; }
+.sidebar{
+  width:300px; max-width:85vw;
+  border-right:1px solid var(--border);
+  background:var(--surface);
+  padding:20px 16px;
+  position:sticky; top:0; height:100vh; overflow:auto;
+}
+.main{ flex:1; min-width:0; }
+.content{ max-width:900px; padding:28px 24px 80px; margin:0 auto; }
+
+/* ---------- TOC ---------- */
+.toc h3{ margin:.25rem 0 .5rem; }
+.toc ul{ list-style:none; padding-left:0; margin:.25rem 0; }
+.toc li{ margin:.35rem 0; }
+.toc a{ text-decoration:none; color:var(--fg); }
+.toc a:hover{ color:var(--accent); }
+.toc a[aria-current="page"]{ color:var(--accent); font-weight:700; }
+
+/* ---------- Top nav pills ---------- */
+.topnav{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
+.pill{
+  display:inline-flex; padding:6px 10px;
+  border:1px solid var(--border); border-radius:999px;
+  text-decoration:none; color:var(--fg); background:#fff;
+}
+.pill:hover{ border-color:var(--accent); }
+
+/* ---------- Headings / code ---------- */
+h1,h2,h3{ scroll-margin-top:90px; }
+pre,code{ font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace; }
+pre{
+  background:var(--code); color:#e6edf3;
+  padding:12px 14px; border-radius:10px; overflow:auto;
+}
+
+/* ---------- Footer ---------- */
+.footer{ border-top:1px solid var(--border); padding:18px 24px; color:var(--muted); }
+
+/* ---------- Mobile menu ---------- */
+.menu-btn{ display:none; }
+@media (max-width: 900px){
+  .sidebar{ position:fixed; left:-100%; transition:left .3s ease; }
+  .sidebar.open{ left:0; }
+  .menu-btn{
+    display:inline-flex; gap:8px; padding:6px 10px;
+    border:1px solid var(--border); border-radius:10px; background:var(--surface);
+  }
+}
+
+/* =========================================================
+   Colorful Callout Boxes (textbook style)
+   ========================================================= */
+
+/* Type palettes (header strip + soft body tint) */
+.definition{ --accent:#0ea5e9; --bgsoft:#eaf7fe; }  /* cyan / light blue */
+.theorem   { --accent:#7c3aed; --bgsoft:#f3e8ff; }  /* purple / lavender */
+.example   { --accent:#16a34a; --bgsoft:#ecfdf5; }  /* green / mint */
+.proof     { --accent:#d97706; --bgsoft:#fff7ed; }  /* orange / peach */
+.exercise  { --accent:#e11d48; --bgsoft:#fef2f2; }  /* red / rose */
+
+/* Base callout with header band */
+.callout{
+  position:relative;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:var(--bgsoft, var(--surface));
+  box-shadow:0 1px 0 rgba(0,0,0,.04);
+  margin:20px 0;
+  padding:14px 16px 16px;
+}
+
+/* Colored header strip */
+.callout .block-title{
+  margin:-14px -16px 12px;
+  padding:10px 14px;
+  background:var(--accent, var(--accent));
+  color:#fff;
+  border-top-left-radius:14px;
+  border-top-right-radius:14px;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  font-size:.85rem;
+}
+
+/* Lists inside callouts */
+.callout p{ margin:8px 0; }
+.callout ol, .callout ul{ margin:8px 0 0 1.25rem; }
+
+/* =========================================================
+   Question Lists, Badges, and Boxed Details
+   ========================================================= */
+
+/* Numbered questions */
+.q-list li{ margin:14px 0; }
+
+/* Inline label link (e.g., Easy-1) */
+.q-label{ font-weight:600; display:inline-block; margin-bottom:4px; }
+
+/* Difficulty badges */
+.badge{
+  display:inline-block; padding:2px 10px; border-radius:999px;
+  font-size:.82rem; font-weight:600; border:1px solid var(--border);
+  color:var(--muted); background:#fff;
+}
+.badge.easy   { color:#166534; background:#ecfdf5; border-color:#bbf7d0; }
+.badge.medium { color:#92400e; background:#fff7ed; border-color:#fed7aa; }
+.badge.hard   { color:#9f1239; background:#fef2f2; border-color:#fecdd3; }
+
+/* Boxed details/summary (Answer / Full solution) */
+.q-list details{
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:.6rem .9rem;
+  background:#fff;
+  margin-top:8px;
+  transition:background .2s ease,border-color .2s ease;
+}
+.q-list details[open]{ border-color:var(--accent); }
+.q-list summary{
+  cursor:pointer; font-weight:600; list-style:none;
+  margin:-.3rem 0 .3rem 0;
+}
+.q-list summary::-webkit-details-marker{ display:none; }
+.q-list summary::before{
+  content:"▶"; display:inline-block; margin-right:6px;
+  transition:transform .2s ease; font-size:.85em;
+}
+.q-list details[open] summary::before{ transform:rotate(90deg); }
+
+/* Optional: distinct tints for answers vs solutions (apply via class) */
+.q-list details.answer   { background:#fffbe8; }  /* light yellow */
+.q-list details.solution { background:#eef6ff; }  /* light blue  */
+/* Video solution tint — mint */
+.q-list details.video {
+  background:#e8fff1;        /* light mint */
+  border-color:#52d39a;
+}
+.q-list details.video[open] {
+  border-color:#16a34a;
+}
+
+
+.img-center {
+  text-align: center;
+  margin: 1rem 0;
+}
+.img-center img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* optional */
+}
+
+

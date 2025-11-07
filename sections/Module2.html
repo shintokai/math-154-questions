@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Module 2 — Functions in Business and Economics</title>
+<link rel="stylesheet" href="../assets/style.css"/>
+<script>
+  window.MathJax={
+    tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},
+    options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../assets/site.js" defer></script>
+</head>
+<body>
+<header class="header">
+  <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+  <h1 class="title">Module 2 — Functions in Business and Economics</h1>
+  <p class="subtitle"><a href="../index.html" class="muted">⟵ Home</a></p>
+</header>
+
+<div class="wrap">
+  <aside id="sidebar" class="sidebar">
+    <div class="toc">
+      <h3>On this page</h3>
+
+  <!-- =============================== -->
+<!-- Module 2 — Table of Contents   -->
+<!-- =============================== -->
+
+<details class="toc-sec">
+  <summary><a href="#Review">2.1 Review</a></summary>
+  <ul>
+    <li><a href="#def-simple-interest">Definition 2.1 — Simple Interest</a></li>
+    <li><a href="#def-compound-interest">Definition 2.2 — Compound Interest</a></li>
+    <li><a href="#remark-compounding">Remark 2.3 — Compounding Terminology</a></li>
+    <li><a href="#def-continuous-interest">Definition 2.4 — Continuous Compounding</a></li>
+    <li><a href="#def-effective-rate">Definition 2.5 — Effective Annual Rate</a></li>
+    <li><a href="#def-profit-function">Definition 2.6 — Profit Function</a></li>
+    <li><a href="#def-equilibrium-point">Definition 2.7 — Equilibrium Point</a></li>
+  </ul>
+</details>
+
+
+<details class="toc-sec">
+  <summary><a href="#Easy">2.2 Easy</a></summary>
+  <ul class="sublist">
+    <li><a href="#module2-easy-1">Easy — 1</a></li>
+    <li><a href="#module2-easy-2">Easy — 2</a></li>
+    <li><a href="#module2-easy-3">Easy — 3</a></li>
+    <li><a href="#module2-easy-4">Easy — 4</a></li>
+    <li><a href="#module2-easy-5">Easy — 5</a></li>
+    <li><a href="#module2-easy-6">Easy — 6</a></li>
+    <li><a href="#module2-easy-7">Easy — 7</a></li>
+    <li><a href="#module2-easy-8">Easy — 8</a></li>
+    <li><a href="#module2-easy-9">Easy — 9</a></li>
+  </ul>
+</details>
+
+
+<details class="toc-sec">
+  <summary><a href="#Intermediate">2.3 Intermediate</a></summary>
+  <ul class="sublist">
+    <li><a href="#module2-intermediate-1">Intermediate — 1</a></li>
+    <li><a href="#module2-intermediate-2">Intermediate — 2</a></li>
+    <li><a href="#module2-intermediate-3">Intermediate — 3</a></li>
+    <li><a href="#module2-intermediate-4">Intermediate — 4</a></li>
+    <li><a href="#module2-intermediate-5">Intermediate — 5</a></li>
+    <li><a href="#module2-intermediate-6">Intermediate — 6</a></li>
+  </ul>
+</details>
+
+
+<details class="toc-sec">
+  <summary><a href="#Challenging">2.4 Challenging</a></summary>
+  <ul class="sublist">
+    <li><a href="#module2-challenging-1">Challenging — 1</a></li>
+    <li><a href="#module2-challenging-2">Challenging — 2</a></li>
+    <li><a href="#module2-challenging-3">Challenging — 3</a></li>
+    <li><a href="#module2-challenging-4">Challenging — 4</a></li>
+    <li><a href="#module2-challenging-5">Challenging — 5</a></li>
+    <li><a href="#module2-challenging-6">Challenging — 6</a></li>
+  </ul>
+</details>
+
+</nav>
+
+
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="content">
+      <nav class="topnav">
+        <a class="pill" href="../index.html">⟵ Home</a>
+        <a class="pill" href="../sections/Module3.html">Next: Module 3 ⟶</a>
+      </nav>
+
+
+<section id="Review">
+  <h2>2.1 Review</h2>
+
+<!-- ===== Foundational Material ===== -->
+
+<!-- ===================== -->
+<!-- Definition 2.1 — Simple Interest -->
+<!-- ===================== -->
+<div class="callout definition" id="def-simple-interest">
+  <div class="block-title">Definition 2.1 — Simple Interest</div>
+
+  <p>
+    Simple interest is calculated using
+    \[
+      I = Prt,
+    \]
+    where
+  </p>
+
+  <p>
+    \(I\): interest over \(t\) years<br>
+    \(P\): principal (initial amount)<br>
+    \(r\): nominal annual interest rate<br>
+    \(t\): time in years
+  </p>
+
+  <p><strong>Accumulated Value:</strong></p>
+
+  \[
+    A = P + I = P(1+rt).
+  \]
+
+  <p><strong>Present Value:</strong></p>
+  \[
+    P = A(1+rt)^{-1}.
+  \]
+</div>
+
+
+<!-- ===================== -->
+<!-- Definition 2.2 — Compound Interest -->
+<!-- ===================== -->
+<div class="callout definition" id="def-compound-interest">
+  <div class="block-title">Definition 2.2 — Compound Interest</div>
+
+  <p><strong>Accumulated Value:</strong></p>
+  \[
+    A = P\left(1 + \frac{r}{m}\right)^{mt}.
+  \]
+
+  <p><strong>Present Value:</strong></p>
+  \[
+    P = A\left(1 + \frac{r}{m}\right)^{-mt}.
+  \]
+
+  <p>
+    \(A\): accumulated value after \(t\) years<br>
+    \(P\): principal<br>
+    \(r\): nominal annual rate<br>
+    \(m\): number of compounding periods per year<br>
+    \(t\): time in years
+  </p>
+</div>
+
+
+<!-- ===================== -->
+<!-- Remark 2.3 — Compounding Terminology -->
+<!-- ===================== -->
+<div class="callout remark" id="remark-compounding">
+  <div class="block-title">Remark 2.3 — Compounding Terminology</div>
+
+  <p>Common compounding frequencies:</p>
+
+  <p>
+    Annually: \(m=1\)<br>
+    Semi-annually: \(m=2\)<br>
+    Quarterly: \(m=4\)<br>
+    Monthly: \(m=12\)<br>
+    Daily: \(m=365\)<br>
+    Compounded \(n\) times: \(m=n\)
+  </p>
+</div>
+
+
+<!-- ===================== -->
+<!-- Definition 2.4 — Continuous Compounding -->
+<!-- ===================== -->
+<div class="callout definition" id="def-continuous-interest">
+  <div class="block-title">Definition 2.4 — Continuous Compounding</div>
+
+  <p><strong>Accumulated Value:</strong></p>
+
+  \[
+    A = Pe^{rt}.
+  \]
+
+  <p><strong>Present Value:</strong></p>
+  \[
+    P = A e^{-rt}.
+  \]
+
+  <p>
+    \(A\): accumulated amount<br>
+    \(P\): principal<br>
+    \(r\): continuous annual rate<br>
+    \(t\): time in years
+  </p>
+</div>
+
+
+<!-- ===================== -->
+<!-- Definition 2.5 — Effective Interest Rate -->
+<!-- ===================== -->
+<div class="callout definition" id="def-effective-rate">
+  <div class="block-title">Definition 2.5 — Effective Annual Rate</div>
+
+  <p>
+    The effective interest rate is the equivalent annual rate when compounding occurs \(m\) times per year.
+  </p>
+
+  \[
+    r_{\text{eff}} = \left(1 + \frac{r}{m}\right)^m - 1.
+  \]
+</div>
+
+<!-- ===================== -->
+<!-- Definition 2.6 — Profit Function -->
+<!-- ===================== -->
+<div class="callout definition" id="def-profit-function">
+  <div class="block-title">Definition 2.6 — Profit Function</div>
+
+  <p>
+    The <em>profit function</em> measures the net return from producing and selling a quantity \(x\) of goods.  
+    It is defined as the difference between total revenue and total cost:
+  </p>
+
+  \[
+    P(x) = R(x) - C(x),
+  \]
+  where
+  \[
+    R(x) = \text{total revenue}, \qquad
+    C(x) = \text{total cost}.
+  \]
+</div>
+
+<!-- ===================== -->
+<!-- Definition 2.7 — Equilibrium Point -->
+<!-- ===================== -->
+<div class="callout definition" id="def-equilibrium-point">
+  <div class="block-title">Definition 2.7 — Equilibrium Point</div>
+
+  <p>
+    An <em>equilibrium point</em> in a market occurs at a quantity \(x\) at which supply and demand are equal.  
+    If \(S(x)\) denotes the supply function and \(D(x)\) the demand function, then the equilibrium quantity satisfies
+  </p>
+
+  \[
+    S(x) = D(x).
+  \]
+
+  <p>
+    The common value \(S(x) = D(x)\) is called the <em>equilibrium price</em>.
+  </p>
+</div>
+
+
+
+<!-- ===== End Foundational Material ===== -->
+<!-- =============================== -->
+<!-- Module 2 — Easy (⋆)            -->
+<!-- =============================== -->
+<section id="Easy">
+<h2>Easy <span class="badge">★</span></h2>
+  <ol class="q-list">
+
+    <!-- M2 Easy-1 -->
+    <li id="module2-easy-1">
+      <a class="q-label" href="#module2-easy-1">Module 2 — Easy — 1</a><br>
+      Describe the difference between simple interest and compound interest in a few sentences.
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Easy-2 -->
+    <li id="module2-easy-2">
+      <a class="q-label" href="#module2-easy-2">Module 2 — Easy — 2</a><br>
+      <ol type="a">
+        <li>Calculate the interest earned on \$5000 with simple interest at 5% over 5 years.</li>
+        <li>Find the accumulated amount of the investment.</li>
+      </ol>
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Easy-3 -->
+    <li id="module2-easy-3">
+      <a class="q-label" href="#module2-easy-3">Module 2 — Easy — 3</a><br>
+      You invest \$2500 at 7% annual interest, compounded semi-annually, for 10 years. How much will you have after 10 years?
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Easy-4 -->
+    <li id="module2-easy-4">
+      <a class="q-label" href="#module2-easy-4">Module 2 — Easy — 4</a><br>
+      You deposit \$12,000 at 8% annual interest, compounded quarterly, for 10 years. Find the accumulated amount.
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Easy-5 -->
+    <li id="module2-easy-5">
+      <a class="q-label" href="#module2-easy-5">Module 2 — Easy — 5</a><br>
+      Invest \$150,000 at 10% annual interest, compounded monthly, for 4 years. Determine the accumulated value at the end of 4 years.
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Easy-6 -->
+    <li id="module2-easy-6">
+      <a class="q-label" href="#module2-easy-6">Module 2 — Easy — 6</a><br>
+      You place \$150,000 at 9% annual interest, compounded daily (365). How much will you have after 3 years?
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Easy-7 -->
+    <li id="module2-easy-7">
+      <a class="q-label" href="#module2-easy-7">Module 2 — Easy — 7</a><br>
+      Find the effective annual rate corresponding to 10% per year, compounded semi-annually.
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Easy-8 -->
+    <li id="module2-easy-8">
+      <a class="q-label" href="#module2-easy-8">Module 2 — Easy — 8</a><br>
+      Find the effective annual rate corresponding to 9% per year, compounded quarterly.
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Easy-9 -->
+    <li id="module2-easy-9">
+      <a class="q-label" href="#module2-easy-9">Module 2 — Easy — 9</a><br>
+      An investment of \$5000 grows under continuous compounding at 8% per annum for 4 years. Determine the accumulated value.
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+  </ol>
+</section>
+
+<!-- ================================= -->
+<!-- Module 2 — Intermediate (⋆⋆)       -->
+<!-- ================================= -->
+<section id="Intermediate">
+<h2>Intermediate <span class="badge">★★</span></h2>
+  <ol class="q-list">
+
+    <!-- M2 Intermediate-1 -->
+    <li id="module2-intermediate-1">
+      <a class="q-label" href="#module2-intermediate-1">Module 2 — Intermediate — 1</a><br>
+      Two years ago, Diego deposited some amount. At 6% compounded continuously, the balance today is \$12,000. Find the initial deposit.
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Intermediate-2 -->
+    <li id="module2-intermediate-2">
+      <a class="q-label" href="#module2-intermediate-2">Module 2 — Intermediate — 2</a><br>
+      You want \$7500 from \$5000 in 3 years with monthly compounding. Find the required nominal annual rate.
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Intermediate-3 -->
+    <li id="module2-intermediate-3">
+      <a class="q-label" href="#module2-intermediate-3">Module 2 — Intermediate — 3</a><br>
+      \$5000 grows to \$8000 in 4 years with semi-annual compounding. Find the nominal annual rate.
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Intermediate-4 -->
+    <li id="module2-intermediate-4">
+      <a class="q-label" href="#module2-intermediate-4">Module 2 — Intermediate — 4</a><br>
+      \$2000 at 9% compounded monthly. How long to double the investment?
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Intermediate-5 -->
+    <li id="module2-intermediate-5">
+      <a class="q-label" href="#module2-intermediate-5">Module 2 — Intermediate — 5</a><br>
+      \$5000 compounded continuously grows to \$6000 in 3 years. Find the annual rate (continuous compounding).
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Intermediate-6 -->
+    <li id="module2-intermediate-6">
+      <a class="q-label" href="#module2-intermediate-6">Module 2 — Intermediate — 6</a><br>
+      \$6000 at 7.5% compounded continuously grows to \$7000. Find the time required.
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+  </ol>
+</section>
+
+<!-- ================================= -->
+<!-- Module 2 — Challenging (⋆⋆⋆)      -->
+<!-- ================================= -->
+<section id="Challenging">
+  <h2>Challenging <span class="badge">★★★</span></h2>
+  <ol class="q-list">
+
+    <!-- M2 Challenging-1 -->
+    <li id="module2-challenging-1">
+      <a class="q-label" href="#module2-challenging-1">Module 2 — Challenging — 1</a><br>
+      You invest \$10,000 for 3 years. Year 1: 5% comp. semi-annually; Year 2: 6% comp. quarterly; Year 3: 7% comp. monthly. No other cashflows. Find the accumulated amount at 3 years.
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Challenging-2 -->
+    <li id="module2-challenging-2">
+      <a class="q-label" href="#module2-challenging-2">Module 2 — Challenging — 2</a><br>
+      Property value follows \(V(t)=80,000\,e^{\sqrt{t}/2}\). Discount at 9% continuously for the next 8 years to obtain the present-value function \(P(t)\). What is \(P(4)\)?
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Challenging-3 -->
+    <li id="module2-challenging-3">
+      <a class="q-label" href="#module2-challenging-3">Module 2 — Challenging — 3</a><br>
+      Show that the effective annual rate corresponding to a nominal rate \(r\) compounded continuously is \(r_{\text{eff}}=e^{r}-1\).  
+      <span class="muted">Hint: start from \(r_{\text{eff}}=\left(1+\frac{r}{m}\right)^m-1\) and take \(m\to\infty\).</span>
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Challenging-4 -->
+    <li id="module2-challenging-4">
+      <a class="q-label" href="#module2-challenging-4">Module 2 — Challenging — 4</a><br>
+      Find the nominal rate \(r\) (continuous compounding) that yields \(r_{\text{eff}}=10\%\) per year.  
+      <span class="muted">Hint: use the previous result \(r_{\text{eff}}=e^{r}-1\).</span>
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Challenging-5 -->
+    <li id="module2-challenging-5">
+      <a class="q-label" href="#module2-challenging-5">Module 2 — Challenging — 5</a><br>
+      A student claims: with equal \(t\) and \(r\), compound interest always exceeds simple interest. State True/False and justify with reasoning or calculation.
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+    <!-- M2 Challenging-6 -->
+    <li id="module2-challenging-6">
+      <a class="q-label" href="#module2-challenging-6">Module 2 — Challenging — 6</a><br>
+      John deposits \$500 at 8% comp. semi-annually. Emily deposits \$500 at 2% comp. monthly. Interest credited only at each period-end. Find the number of months until John’s balance is at least three times Emily’s.  
+      <span class="muted">Leave your answer in calculator-ready form. Note: 
+      \(2\ln\!\big(1+\tfrac{0.08}{2}\big) - 12\ln\!\big(1+\tfrac{0.02}{12}\big) &gt; 0\).</span>
+      <details class="answer"><summary>Answer</summary>
+        <!-- Fill in later -->
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <!-- Fill in later -->
+      </details>
+    </li>
+
+  </ol>
+</section>
+
+
+<footer class="footer">
+      <small>© <span id="year"></span> Shinto Kai · CC BY 4.0</small>
+</footer>
+  </main>
+</div>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
+
+

@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Module 1 — Foundations of Calculus</title>
+<link rel="stylesheet" href="../assets/style.css"/>
+<script>
+  window.MathJax={
+    tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},
+    options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../assets/site.js" defer></script>
+</head>
+<body>
+<header class="header">
+  <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+  <h1 class="title">Module 1 — Foundations of Calculus</h1>
+  <p class="subtitle"><a href="../index.html" class="muted">⟵ Home</a></p>
+</header>
+
+<div class="wrap">
+  <aside id="sidebar" class="sidebar">
+    <div class="toc">
+      <h3>On this page</h3>
+
+  <details class="toc-sec">
+    <summary><a href="#Review">1.1 Review</a></summary>
+    <ul>
+  <li><a href="#prop-domain">Property 1.1 — Domain Restrictions</a></li>
+  <li><a href="#prop-exp-ln">Property 1.2 — \(e^x\) & \(\ln x\)</a></li>
+  <li><a href="#prop-exp-laws">Property 1.3 — Exponent Laws</a></li>
+  <li><a href="#prop-log-laws">Property 1.4 — Log Laws</a></li>
+  <li><a href="#def-compose">Definition 1.5 — Composition</a></li>
+</ul>
+
+  </details>
+
+  <details class="toc-sec">
+    <summary><a href="#Easy">1.2 Easy</a></summary>
+    <ul class="sublist">
+      <li><a href="#module1-easy-1">Easy — 1</a></li>
+      <li><a href="#module1-easy-2">Easy — 2</a></li>
+      <li><a href="#module1-easy-3">Easy — 3</a></li>
+      <li><a href="#module1-easy-4">Easy — 4</a></li>
+      <li><a href="#module1-easy-5">Easy — 5</a></li>
+      <li><a href="#module1-easy-6">Easy — 6</a></li>
+      <li><a href="#module1-easy-7">Easy — 7</a></li>
+      <li><a href="#module1-easy-8">Easy — 8</a></li>
+      <li><a href="#module1-easy-9">Easy — 9</a></li>
+      <li><a href="#module1-easy-10">Easy — 10</a></li>
+      <li><a href="#module1-easy-11">Easy — 11</a></li>
+    </ul>
+  </details>
+
+  <details class="toc-sec">
+    <summary><a href="#Intermediate">1.3 Intermediate</a></summary>
+    <ul class="sublist">
+      <li><a href="#module1-intermediate-1">Intermediate — 1</a></li>
+      <li><a href="#module1-intermediate-2">Intermediate — 2</a></li>
+      <li><a href="#module1-intermediate-3">Intermediate — 3</a></li>
+      <li><a href="#module1-intermediate-4">Intermediate — 4</a></li>
+      <li><a href="#module1-intermediate-5">Intermediate — 5</a></li>
+      <li><a href="#module1-intermediate-6">Intermediate — 6</a></li>
+    </ul>
+  </details>
+
+  <details class="toc-sec">
+    <summary><a href="#Challenging">1.4 Challenging</a></summary>
+    <ul class="sublist">
+      <li><a href="#module1-challenging-1">Challenging — 1</a></li>
+      <li><a href="#module1-challenging-2">Challenging — 2</a></li>
+    </ul>
+  </details>
+</nav>
+
+
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="content">
+      <nav class="topnav">
+        <a class="pill" href="../index.html">⟵ Home</a>
+        <a class="pill" href="../sections/Module2.html">Next: Module 2 ⟶</a>
+      </nav>
+
+
+<p>
+  You may click 
+  <a href="../PDF/Module 1.pdf" target="_blank" rel="noopener">
+    <strong>here</strong>
+  </a>
+  to download the PDF version.
+</p>
+
+<section id="Review">
+  <h2>1.1 Review</h2>
+
+<!-- ===== Foundational Material ===== -->
+
+<!-- ===================== -->
+<!-- Property 1.1 — Domain Restrictions -->
+<!-- ===================== -->
+<div class="callout theorem" id="prop-domain">
+  <div class="block-title">Property 1.1 — Domain Restrictions</div>
+  <p>
+    The domain of an expression is the set of all real numbers for which the expression is defined. 
+    The following restrictions must be satisfied:
+  </p>
+  <ol>
+    <li><strong>Division by zero.</strong>  
+      A denominator may not be zero.
+    </li>
+    <li><strong>Even radicals.</strong>  
+      An even-indexed radical requires a nonnegative radicand.
+    </li>
+    <li><strong>Logarithms.</strong>  
+      The argument of $\log_b x$ (in particular $\ln x$) must satisfy $x>0$.
+    </li>
+  </ol>
+</div>
+
+
+<!-- ===================== -->
+<!-- Property 1.2 — Inverse Nature of e^x and ln x -->
+<!-- ===================== -->
+<div class="callout theorem" id="prop-exp-ln">
+  <div class="block-title">Property 1.2 — Relationship Between \(e^x\) and \(\ln x\)</div>
+  <p>
+    The exponential function $e^x$ and the natural logarithm $\ln x$ are inverse functions.  
+    In particular,
+  </p>
+  <ol>
+    <li>$e^{\ln x} = x$, for $x>0$;</li>
+    <li>$\ln(e^x) = x$, for all real $x$.</li>
+  </ol>
+  <p class="muted">
+    Note that $\ln(x)$ is defined as the logarithm base \(e\), Euler’s number; that is,
+    $\ln(x) = \log_e(x)$.
+  </p>
+</div>
+
+
+<!-- ===================== -->
+<!-- Property 1.3 — Laws of Exponents -->
+<!-- ===================== -->
+<div class="callout theorem" id="prop-exp-laws">
+  <div class="block-title">Property 1.3 — Laws of Exponents</div>
+  <p>
+    Let $a$ and $b$ be positive real numbers, and let $x,y\in\mathbb{R}$. Then
+  </p>
+  <ol>
+    <li>$b^x b^y = b^{\,x+y}$</li>
+    <li>$\dfrac{b^x}{b^y} = b^{\,x-y}$</li>
+    <li>$(b^x)^y = b^{\,xy}$</li>
+    <li>$(ab)^x = a^x b^x$</li>
+    <li>$\displaystyle\left(\dfrac{a}{b}\right)^x = \dfrac{a^x}{b^x}$</li>
+  </ol>
+</div>
+
+
+<!-- ===================== -->
+<!-- Property 1.4 — Laws of Logarithms -->
+<!-- ===================== -->
+<div class="callout theorem" id="prop-log-laws">
+  <div class="block-title">Property 1.4 — Laws of Logarithms</div>
+  <p>
+    For $a>0$, $A>0$, $B>0$, and $x\in\mathbb{R}$,
+  </p>
+  <ol>
+    <li>$\ln(AB) = \ln A + \ln B$</li>
+    <li>$\displaystyle \ln\!\left(\frac{A}{B}\right) = \ln A - \ln B$</li>
+    <li>$\ln(e^x) = x$</li>
+    <li>$\ln 1 = 0$</li>
+    <li>$\ln(a^x) = x\ln a$</li>
+    <li>$a^x = e^{x\ln a}$</li>
+  </ol>
+  <p class="muted">
+    Although most examples use natural logarithms ($\ln$), these identities hold for all logarithmic bases.
+  </p>
+</div>
+
+
+<!-- ===================== -->
+<!-- Definition 1.5 — Composition -->
+<!-- ===================== -->
+<div class="callout definition" id="def-compose">
+  <div class="block-title">Definition 1.5 — Composition of Functions</div>
+  <p>
+   A composition function is a function where the output of one function is used as the input for another function, creating a new combined function.
+  Here is the notation for the composition function:
+  $$(f\circ g)(x) :=f(g(x))$$
+  </p>
+</div>
+
+
+<!-- ===== End Foundational Material ===== -->
+<section id="Easy">
+<h2>Easy <span class="badge">★</span></h2>
+
+  <ol class="q-list">
+
+    <!-- Easy-1 -->
+    <li id="module1-easy-1">
+      <a class="q-label" href="#module1-easy-1">Module 1 — Easy — 1</a><br>
+      Determine the domain of \(f(x)=\sqrt{x-5}\) and express it in interval notation.
+      <details class="answer"><summary>Answer</summary>
+        <p>Domain: \([5,\infty)\).</p>
+      </details>
+      </details><details class="solution"><summary>Full Solution</summary>
+        <p>To find the domain of the function $f(x) = \sqrt{x-5}$, we must determine the values of $x$ for which the expression under the square root is non-negative. Thus, we need to solve the inequality:
+
+        $$x - 5 \geq 0$$
+
+        Solving for $x$, we get:
+
+        $$x \geq 5$$
+
+        Now, we can write the domain in interval notation:
+
+        Domain of $f(x) = [5, \infty)$
+      </p>
+      </details>
+    </li>
+
+    <!-- Easy-2 -->
+    <li id="module1-easy-2">
+      <a class="q-label" href="#module1-easy-2">Module 1 — Easy — 2</a><br>
+      Determine the domain of \(\displaystyle f(x)=\frac{1}{\sqrt{x-5}}\) and express it in interval notation.
+      <details class="answer"><summary>Answer</summary>
+        <p>Domain: \((5,\infty)\).</p>
+      </details>
+      </details><details class="solution"><summary>Full Solution</summary>
+        <p>To find the domain of the function $f(x) = \frac{1}{\sqrt{x-5}}$, we must determine the values of $x$ for which the expression under the square root is non-negative and also non-zero since $\sqrt{x-5}$ is in the denominator. Thus, we need to solve the inequality:
+
+        $$x - 5 > 0$$
+
+        Solving for $x$, we get:
+
+        $$x > 5$$
+
+        Now, we can write the domain in interval notation:
+
+        Domain of $f(x) = (5, \infty)$
+      </p>
+      </details>
+    </li>
+
+    <!-- Easy-3 -->
+    <li id="module1-easy-3">
+      <a class="q-label" href="#module1-easy-3">Module 1 — Easy — 3</a><br>
+      Determine the domain of \(f(x)=e^{-x}\) and express it in interval notation.
+      <details class="answer"><summary>Answer</summary>
+        <p>Domain: \((-\infty,\infty)\).</p>
+      </details>
+      </details><details class="solution"><summary>Full Solution</summary>
+        <p>To find the domain of\[f(x) = e^{-x},\]note that the exponential function is defined for every real input. Since \(-x\) can take any real value as \(x\) ranges over \(\mathbb{R}\), the expression \(e^{-x}\) is always defined.
+          Thus, the domain of \(f\) is \[(-\infty, \infty).\]
+      </p>
+      </details>
+    </li>
+
+    <!-- Easy-4 -->
+    <li id="module1-easy-4">
+      <a class="q-label" href="#module1-easy-4">Module 1 — Easy — 4</a><br>
+      Determine the domain of \(f(x)=\ln(x+2)\) and express it in interval notation.
+      <details class="answer"><summary>Answer</summary>
+        <p>Domain: \((-2,\infty)\).</p>
+      </details>
+      </details><details class="solution"><summary>Full Solution</summary>
+        <p>To find the domain of the function $f(x) = \ln(x+2)$, we must determine the values of $x$ for which the expression under the $\ln()$ is non-negative and also non-zero. Thus, we need to solve the inequality:
+
+        $$x + 2 > 0$$
+
+        Solving for $x$, we get:
+
+        $$x > -2$$
+
+        Now, we can write the domain in interval notation:
+
+        Domain of $f(x) = (-2, \infty)$
+      </p>
+      </details>
+    </li>
+
+    <!-- Easy-5 -->
+    <li id="module1-easy-5">
+      <a class="q-label" href="#module1-easy-5">Module 1 — Easy — 5</a><br>
+      Determine the domain of \(f(x)=\ln(x^2-4)\) and express it in interval notation.
+      <details class="answer"><summary>Answer</summary>
+        <p>Domain: \((-\infty,-2)\cup(2,\infty)\).</p>
+      </details><details class="solution"><summary>Full Solution</summary>
+
+  <p>
+    To find the domain of \(f(x)=\ln(x^2-4)\), the argument of the logarithm must be positive:
+  </p>
+
+ <p>
+  \( x^2 - 4 > 0 \implies (x-2)(x+2) > 0 \implies (-\infty,-2)\text{ or }(2,\infty) \)
+</p>
+
+
+  <div class="img-center">
+    <img src="../Picture/pic1.jpg" style="max-width:70%;">
+  </div>
+
+  <p>
+    Therefore, the domain is:
+    \[
+      (-\infty,-2)\cup(2,\infty)
+    \]
+  </p>
+</details>
+<details class="video">
+    <summary>Video solution</summary>
+    <p>
+      The video solution is available
+      <a href="https://drive.google.com/file/d/1Kjlj69TrLCIgMb9yfkjUHQ8RaLc-P2V7/view?usp=drive_link"
+         target="_blank" rel="noopener">
+        here
+      </a>.
+    </p>
+  </details>
+
+    </li>
+
+    <!-- Easy-6 -->
+    <li id="module1-easy-6">
+      <a class="q-label" href="#module1-easy-6">Module 1 — Easy — 6</a><br>
+      Determine the domain of \(\displaystyle f(x)=\frac{1}{\ln(x^2-4)}\).
+      <details class="answer"><summary>Answer</summary>
+        <p>Domain: \((-\infty,-\sqrt 5)\cup(-\sqrt 5,-2)\cup(2,\sqrt 5)\cup(\sqrt 5,\infty)\).</p>
+      </details>
+      </details><details class="solution"><summary>Full Solution</summary>
+<p>
+In addition to the domain found in
+<a href="#module1-easy-5"><strong>Module&nbsp;1 — Easy — 5</strong></a>,
+we must ensure that \(\ln(x^2 - 4)\) is not zero.
+</p>
+
+<p>
+  Since \(\ln(t)=0\) when \(t=1\), we solve
+</p>
+
+$$
+x^2 - 4 = 1
+\quad\implies\quad
+x^2 = 5
+\quad\implies\quad
+x = \pm\sqrt{5}.
+$$
+
+<p>
+  Thus, \(x = \pm\sqrt{5}\) must be excluded from the domain.
+</p>
+
+<p>
+  Combining this restriction with the domain obtained previously,
+  we exclude \(\pm\sqrt{5}\) from
+  \((-\infty,-2)\cup(2,\infty)\).
+</p>
+
+<p>
+  Therefore, the domain is:
+</p>
+
+$$
+(-\infty,-\sqrt5)\;
+\cup\;
+(-\sqrt5,-2)\;
+\cup\;
+(2,\sqrt5)\;
+\cup\;
+(\sqrt5,\infty).
+$$
+
+
+      </details>
+    </li>
+
+    <!-- Easy-7 -->
+    <li id="module1-easy-7">
+      <a class="q-label" href="#module1-easy-7">Module 1 — Easy — 7</a><br>
+      Solve \(4e^{x-1}=4\).
+      <details class="answer"><summary>Answer</summary>
+        <p>\(x=1\).</p>
+      </details>
+      </details><details class="solution"><summary>Full Solution</summary>
+<p>
+  We solve
+</p>
+
+$$
+4e^{x-1} = 4
+\;\;\Longrightarrow\;\;
+e^{x-1} = 1
+$$
+
+<p>
+  Taking the natural logarithm of both sides:
+</p>
+
+$$
+\ln\!\bigl(e^{x-1}\bigr) = \ln(1)
+$$
+
+<p>
+  Using \(\ln(e^u)=u\) and \(\ln(1) = 0\),
+</p>
+
+$$
+x - 1 = 0
+\;\;\Longrightarrow\;\;
+x = 1.
+$$
+
+      </details>
+    </li>
+
+    <!-- Easy-8 -->
+    <li id="module1-easy-8">
+      <a class="q-label" href="#module1-easy-8">Module 1 — Easy — 8</a><br>
+      Solve \(2e^{5x}-1=0\).
+      <details class="answer"><summary>Answer</summary>
+        <p>\(x=-\dfrac{\ln 2}{5}\).</p>
+      </details>
+      </details><details class="solution"><summary>Full Solution</summary>
+$$
+2e^{5x}-1=0
+\Rightarrow
+e^{5x}=\tfrac12
+\Rightarrow
+\ln(e^{5x})=\ln\!\left(\tfrac12\right)
+\Rightarrow
+5x = \ln\!\left(\tfrac12\right)
+\Rightarrow
+x = \frac{\ln(\tfrac12)}{5} = -\frac{\ln(2)}{5}
+$$
+
+      </details>
+    </li>
+
+    <!-- Easy-9 -->
+    <li id="module1-easy-9">
+      <a class="q-label" href="#module1-easy-9">Module 1 — Easy — 9</a><br>
+      Solve \(3+2\ln\!\left(\frac{x}{7}+3\right)=-4\).
+      <details class="answer"><summary>Answer</summary>
+        <p>\(x=7\bigl(e^{-7/2}-3\bigr)\).</p>
+      </details>
+      </details><details class="solution"><summary>Full Solution</summary>
+$$
+3 + 2\ln\!\left(\frac{x}{7} + 3\right) = -4
+\Rightarrow
+2\ln\!\left(\frac{x}{7}+3\right) = -7
+\Rightarrow
+\ln\!\left(\frac{x}{7}+3\right) = -\frac72
+$$
+$$
+\Rightarrow
+e^{\ln\left(\frac{x}{7}+3\right)} = e^{-7/2}
+\Rightarrow
+\frac{x}{7} + 3 = e^{-7/2}
+\Rightarrow
+x = 7\left(e^{-7/2} - 3\right)
+$$
+
+      </details>
+    </li>
+
+    <!-- Easy-10 -->
+    <li id="module1-easy-10">
+      <a class="q-label" href="#module1-easy-10">Module 1 — Easy — 10</a><br>
+      Compute the following:
+      <ol type="a">
+        <li>\(a^5\cdot a^7\)</li>
+        <li>\(\dfrac{a^3}{a^2}\)</li>
+        <li>\((3a^2)^2\)</li>
+        <li>\(2^5\cdot 4^{-2}\)</li>
+      </ol>
+      <details class="answer"><summary>Answer</summary>
+        <ol type="a">
+          <li>\(a^{12}\)</li>
+          <li>\(a\)</li>
+          <li>\(9a^4\)</li>
+          <li>\(2\)</li>
+        </ol>
+      </details>
+      </details><details class="solution"><summary>Full Solution</summary>
+<ol type="a">
+  <li>
+    \(a^{5+7} = a^{12}\)
+  </li>
+
+  <li>
+    \(a^{3-2} = a^1 = a\)
+  </li>
+
+  <li>
+    \((3)^2 (a^2)^2 = 9a^4\)
+  </li>
+
+  <li>
+    \(2^5 \times (2^2)^{-2} = 2^5 \times 2^{-4} = 2^1 = 2\)
+  </li>
+</ol>
+
+      </details>
+    </li>
+
+    <!-- Easy-11 -->
+    <li id="module1-easy-11">
+      <a class="q-label" href="#module1-easy-11">Module 1 — Easy — 11</a><br>
+      Simplify each expression:
+      <ol type="a">
+        <li>\(\ln 8+\ln 2\)</li>
+        <li>\(\ln 54-2\ln 2+\ln 2\)</li>
+      </ol>
+      <details class="answer"><summary>Answer</summary>
+        <ol type="a">
+          <li>\(\ln 16\)</li>
+          <li>\(\ln 27\)</li>
+        </ol>
+      </details>
+      </details><details class="solution"><summary>Full Solution</summary>
+<p>
+  These two questions can be evaluated using logarithmic properties.
+</p>
+
+<ol type="a">
+
+  <li>
+    $$
+    \begin{aligned}
+    \ln(8) + \ln(2)
+      &= \ln(8 \cdot 2) \\
+      &= \ln(16)
+    \end{aligned}
+    $$
+  </li>
+
+  <li>
+    $$
+    \begin{aligned}
+    \ln(54) - 2\ln(2) + \ln(2)
+      &= \ln(54) - \ln(2^2) + \ln(2) \\
+      &= \ln\!\left(\frac{54 \cdot 2}{4}\right) \\
+      &= \ln(27)
+    \end{aligned}
+    $$
+  </li>
+
+</ol>
+
+      </details>
+    </li>
+
+  </ol>
+</section>
+
+<!-- =============================== -->
+<!-- Module 1 — Intermediate (⋆⋆)   -->
+<!-- =============================== -->
+<section id="Intermediate">
+<h2>Intermediate <span class="badge">★★</span></h2>
+<ol class="q-list">
+
+  <!-- Intermediate-1 -->
+  <li id="module1-intermediate-1">
+    <a class="q-label" href="#module1-intermediate-1">Module 1 — Intermediate — 1</a><br>
+    Determine the domain of \(f(x)=\ln(\ln(x^2-4))\) and express it in interval notation.
+    <details class="answer"><summary>Answer</summary>
+     <p>Domain: $(-\infty, -\sqrt{5}) \cup (\sqrt{5}, \infty)$<p></p>
+    </details>
+    <details class="solution"><summary>Full Solution</summary>
+<p>
+To find the domain of the function
+\(f(x) = \ln(\ln(x^2 - 4))\),
+we must determine the values of \(x\) for which the composition of logarithms is defined.
+</p>
+
+<p>
+First, the argument of the inner logarithm must be positive:
+</p>
+
+$$
+x^2 - 4 > 0
+$$
+
+<p>Factor:</p>
+
+$$
+(x - 2)(x + 2) > 0
+$$
+
+<div class="img-center">
+  <img src="../Picture/pic2.png" style="max-width:70%;">
+</div>
+
+<p>
+This inequality holds when
+</p>
+
+$$
+x < -2 \quad \text{or} \quad x > 2
+$$
+
+<p>
+Next, the argument of the outer logarithm must also be positive:
+</p>
+
+$$
+\ln(x^2 - 4) > 0
+$$
+
+<p>
+Exponentiate both sides:
+</p>
+
+$$
+e^{\ln(x^2 - 4)} > e^0
+\quad\Rightarrow\quad
+x^2 - 4 > 1
+$$
+
+<p>Simplify:</p>
+
+$$
+x^2 > 5
+\quad\Rightarrow\quad
+x < -\sqrt{5} \quad \text{or} \quad x > \sqrt{5}
+$$
+
+<div class="img-center">
+  <img src="../Picture/pic3.png" style="max-width:70%;">
+</div>
+
+<p>
+Now take the intersection of
+\(
+x < -2 \text{ or } x > 2
+\)
+and
+\(
+x < -\sqrt{5} \text{ or } x > \sqrt{5}
+\).
+</p>
+
+<div class="img-center">
+  <img src="../Picture/pic4.jpg" style="max-width:70%;">
+</div>
+
+<p>
+Therefore, the domain is:
+</p>
+
+$$
+(-\infty, -\sqrt{5}) \;\cup\; (\sqrt{5}, \infty)
+$$
+</details>
+
+  </li>
+
+  <!-- Intermediate-2 -->
+  <li id="module1-intermediate-2">
+    <a class="q-label" href="#module1-intermediate-2">Module 1 — Intermediate — 2</a><br>
+    Determine the domain of \(f(x)=\sqrt{154-x^2}\) and express it in interval notation.
+    <details class="answer"><summary>Answer</summary>
+      <p>Domain: $\left[-\sqrt{154},\sqrt{154}\:\right]$<p>
+    </details>
+    <details class="solution"><summary>Full Solution</summary>
+<p>
+To determine the domain of 
+\(
+f(x)=\sqrt{154-x^2},
+\)
+the radicand must be nonnegative:
+</p>
+
+$$
+154 - x^2 \ge 0.
+\implies
+x^2 \le 154
+\implies
+-\sqrt{154} \le x \le \sqrt{154}.
+$$
+
+<p>
+Therefore, the domain is
+</p>
+
+$$
+\left[-\sqrt{154},\,\sqrt{154}\right].
+$$
+</details>
+
+  </li>
+
+  <!-- Intermediate-3 -->
+  <li id="module1-intermediate-3">
+    <a class="q-label" href="#module1-intermediate-3">Module 1 — Intermediate — 3</a><br>
+    Solve \(\displaystyle \frac{A}{1+Be^{t/2}}=C\) for \(t\), where \(B,C\ne0\).
+    <details class="answer"><summary>Answer</summary>
+      <p>$t = 2 \cdot {\ln\left(\frac{A-C}{BC} \right)}$<p>
+    </details>
+    <details class="solution"><summary>Full Solution</summary>
+<p>
+We solve the equation
+\[
+\frac{A}{1+Be^{t/2}}=C
+\]
+for \(t\), assuming \(B\ne0\) and \(C\ne0\).
+</p>
+
+<p>
+Multiply both sides by \(1+Be^{t/2}\):
+\[
+A = C\bigl(1+Be^{t/2}\bigr).
+\]
+Thus
+\[
+A = C + CBe^{t/2}.
+\]
+Rearranging gives
+\[
+A - C = CBe^{t/2}.
+\]
+Hence
+\[
+e^{t/2} = \frac{A-C}{CB}.
+\]
+</p>
+
+<p>
+Taking the natural logarithm yields
+\[
+\frac{t}{2} = \ln\!\left(\frac{A-C}{CB}\right).
+\]
+Therefore,
+\[
+t = 2 \ln\!\left(\frac{A-C}{CB}\right).
+\]
+</p>
+    </details>
+<details class="video">
+    <summary>Video solution</summary>
+    <p>
+      The video solution is available
+      <a href="https://drive.google.com/file/d/1cIgY4dwPNISLSGqALm_gbjkCxWbnolew/view"
+         target="_blank" rel="noopener">
+        here
+      </a>.
+    </p>
+  </details>
+  </li>
+
+  <!-- Intermediate-4 -->
+  <li id="module1-intermediate-4">
+    <a class="q-label" href="#module1-intermediate-4">Module 1 — Intermediate — 4</a><br>
+    Solve \(2\ln(\sqrt{x}) - \ln(1-x) = 2\).
+    <details class="answer"><summary>Answer</summary>
+      <p>$x = \frac{e^2}{1+e^2}$ <p>
+    </details>
+<details class="solution"><summary>Full Solution</summary>
+
+<p><strong>Domain.</strong>  
+The expression \(\ln(\sqrt{x})\) requires \(\sqrt{x}>0\), hence \(x>0\).  
+The expression \(\ln(1-x)\) requires \(1-x>0\), hence \(x<1\).  
+Thus, the equation is defined only for
+\[
+0 < x < 1.
+\]
+</p>
+
+<p>
+Using \(\sqrt{x} = x^{1/2}\) and the logarithm laws,
+\[
+2\ln(\sqrt{x}) - \ln(1-x) = 2
+\quad\Longrightarrow\quad
+2\cdot \tfrac12 \ln x - \ln(1-x) = 2
+\quad\Longrightarrow\quad
+\ln\!\left(\frac{x}{1-x}\right)=2.
+\]
+</p>
+
+<p>
+Exponentiating both sides,
+\[
+\frac{x}{1-x} = e^{2}
+\quad\Longrightarrow\quad
+x = e^{2}(1-x)
+\quad\Longrightarrow\quad
+x(1+e^{2}) = e^{2}
+\quad\Longrightarrow\quad
+x = \frac{e^{2}}{1+e^{2}}.
+\]
+</p>
+
+<p>
+Finally, since \(\dfrac{e^{2}}{1+e^{2}} \in (0,1)\), it satisfies the domain.
+</p>
+
+</details>
+
+
+  </li>
+
+  <!-- Intermediate-5 -->
+  <li id="module1-intermediate-5">
+    <a class="q-label" href="#module1-intermediate-5">Module 1 — Intermediate — 5</a><br>
+    Find the domain of the function \(h(x)=(f\circ g)(x)\), where  
+    \[
+      f(x)=\sqrt{x},\qquad g(x)=\sin(x),\quad x\in[0,2\pi].
+    \]
+    <details class="answer"><summary>Answer</summary>
+      <p>Domain: $[0, \pi] \cup [2\pi]$<p>
+    </details>
+<details class="solution"><summary>Full Solution</summary>
+
+<p>
+We are given
+\[
+f(x)=\sqrt{x}, 
+\qquad
+g(x)=\sin(x), \quad x\in[0,2\pi],
+\]
+and we consider the composition \(h(x)=(f\circ g)(x)=\sqrt{\sin(x)}.\)
+</p>
+
+<p>
+The expression \(\sqrt{\sin(x)}\) is defined precisely when \(\sin(x)\ge0\).  
+Over the interval \([0,2\pi]\), the sine function is non-negative on
+\[
+[0,\pi].
+\]
+<p>
+  <div class="img-center">
+  <img src="../Picture/pic5.png" style="max-width:70%;">
+</div>
+<p>
+Thus, \(h(x)\) is defined exactly for
+\[
+x\in[0,\pi].
+\]
+</p>
+<p>
+Therefore, the domain of \(h(x)\) is
+\[
+[0,\pi].
+\]
+</p>
+
+</details>
+
+  </li>
+
+  <!-- Intermediate-6 -->
+  <li id="module1-intermediate-6">
+    <a class="q-label" href="#module1-intermediate-6">Module 1 — Intermediate — 6</a><br>
+    Solve the equation:
+    \[
+    (\sqrt[3]{2})^x = 8^{10-x}.
+    \]
+    <details class="answer"><summary>Answer</summary>
+      <p>$x=9.$<p>
+    </details>
+<details class="solution"><summary>Full Solution</summary>
+
+<p>
+We solve
+\[
+\bigl(\sqrt[3]{2}\bigr)^x = 8^{\,10-x}.
+\]
+Rewrite both sides in base \(2\):
+\[
+\left(2^{1/3}\right)^x = \left(2^3\right)^{10-x}
+\;\Longrightarrow\;
+2^{x/3} = 2^{\,30-3x}.
+\]
+Taking logarithms of both sides,
+\[
+\ln\!\left(2^{x/3}\right) = \ln\!\left(2^{30-3x}\right).
+\]
+Using \(\ln(a^b) = b\ln(a)\),
+\[
+\frac{x}{3}\ln 2 = (30-3x)\ln 2.
+\]
+Since \(\ln 2 \neq 0\),
+\[
+\frac{x}{3} = 30 - 3x
+\;\Longrightarrow\;
+x = 90 - 9x
+\;\Longrightarrow\;
+10x = 90
+\;\Longrightarrow\;
+x = 9.
+\]
+</p>
+</details>
+</li>
+</ol>
+<!-- =============================== -->
+<!-- Module 1 — Challenging (⋆⋆⋆)   -->
+<!-- =============================== -->
+<section id="Challenging">
+  <h2>Challenging <span class="badge">★★★</span></h2>
+
+  <ol class="q-list">
+
+    <!-- Challenging-1 -->
+    <li id="module1-challenging-1">
+      <a class="q-label" href="#module1-challenging-1">Module 1 — Challenging — 1</a><br>
+      Let
+      \[
+        f(x)=\frac{1}{x-2},\qquad
+        g(x)=\sqrt{3x-1},\qquad
+        h(x)=\ln(x+1).
+      \]
+      Find the composition \((f\circ g\circ h)(x)\) and determine its domain.
+
+<details class="answer"><summary>Answer</summary>
+  <p>
+    \[
+      (f \circ g \circ h)(x)
+      = \frac{1}{\sqrt{\,3\ln(x+1) - 1\,} - 2}
+    \]
+  </p>
+
+  <p>
+    Domain:
+    \[
+      \bigl(\sqrt[3]{e} - 1,\; e^{5/3} - 1\bigr) 
+      \;\cup\; 
+      \bigl(e^{5/3} - 1,\; \infty\bigr)
+    \]
+  </p>
+</details>
+
+
+<details class="solution"><summary>Full Solution</summary>
+
+<p>
+We first compute the composition \( (f \circ g \circ h)(x) \).
+Since
+\( h(x)=\ln(x+1) \),
+\( g(x)=\sqrt{3x-1} \),
+and
+\( f(x)=\dfrac{1}{x-2} \),
+we have
+</p>
+
+<p>
+\[
+(f \circ g \circ h)(x)
+= f\!\bigl(g(h(x))\bigr)
+= f\!\left( \sqrt{\,3\ln(x+1)-1\,} \right)
+= \frac{1}{\sqrt{\,3\ln(x+1)-1\,}-2}.
+\]
+</p>
+
+<p>
+To determine the domain, each component must be defined.
+</p>
+
+<p>
+First, since \(h(x)=\ln(x+1)\), we must have
+\[
+x+1>0 \quad\Rightarrow\quad x>-1.
+\]
+</p>
+
+<p>
+Next, the argument of \(g\bigl(h(x)\bigr)\) must be nonnegative:
+\[
+3\ln(x+1)-1 \ge 0
+\quad\Rightarrow\quad
+\ln(x+1) \ge \tfrac13
+\quad\Rightarrow\quad
+x \ge e^{1/3}-1.
+\]
+</p>
+
+<p>
+Finally, \(f(x)=\dfrac{1}{x-2}\) is undefined when its denominator is zero; thus
+\[
+\sqrt{\,3\ln(x+1)-1\,} \ne 2
+\quad\Rightarrow\quad
+3\ln(x+1)-1 \ne 4
+\quad\Rightarrow\quad
+x \ne e^{5/3}-1.
+\]
+</p>
+
+<p>
+Combining these conditions, we require
+\[
+x > e^{1/3}-1, \qquad x \ne e^{5/3}-1.
+\]
+</p>
+
+<p>
+Therefore, the domain is
+\[
+\boxed{
+\bigl(e^{1/3}-1,\;e^{5/3}-1\bigr)
+\;\cup\;
+\bigl(e^{5/3}-1,\;\infty\bigr)
+}.
+\]
+</p>
+</details>
+<details class="video">
+    <summary>Video solution</summary>
+    <p>
+      The video solution is available
+      <a href="https://drive.google.com/file/d/1k2_N9yzaV5hPso9ZkFpE8Ggq7EKgqEL4/view?usp=drive_link"
+         target="_blank" rel="noopener">
+        here
+      </a>.
+    </p>
+  </details>
+
+    </li>
+
+    <!-- Challenging-2 -->
+    <li id="module1-challenging-2">
+      <a class="q-label" href="#module1-challenging-2">Module 1 — Challenging — 2</a><br>
+
+      A student attempted to solve the following equation:
+      \[
+      \ln(x) + \ln(x+4) = 1.
+      \]
+
+      Their work is shown below.  
+      Identify whether the solution is correct.  
+      If incorrect, identify the error and provide the correct solution.
+
+      <p><strong>Student’s work:</strong></p>
+
+      <p>
+        Step 1: \(\ln(x(x+4)) = 1\)<br>
+        Step 2: \(e^{\ln(x(x+4))} = e^1\)<br>
+        Step 3: \(x(x+4) = e\)<br>
+        Step 4: \(x^2 + 4x - e = 0\)<br>
+        Step 5: By quadratic formula,  
+        \[
+        x = \frac{-4 \pm \sqrt{16 + 4e}}{2}
+        \]
+      </p>
+<details class="answer"><summary>Answer</summary>
+<p>
+The quadratic equation obtained from the logarithmic identity is correct, but both solutions were chosen without checking the domain. Since \(\ln x\) and \(\ln(x+4)\) require \(x>0\), only
+\[
+x=-2+\sqrt{\,4+e\,}
+\]
+satisfies the domain.
+</p>
+</details>
+
+<details class="solution"><summary>Full Solution</summary>
+<p>
+\[
+\ln x+\ln(x+4)=1
+\quad\Longrightarrow\quad
+\ln\!\bigl(x(x+4)\bigr)=1.
+\]
+Exponentiating,
+\[
+x(x+4)=e
+\quad\Longrightarrow\quad
+x^2+4x-e=0.
+\]
+Thus
+\[
+x=\frac{-4\pm\sqrt{16+4e}}{2}
+= -2\pm\sqrt{\,4+e\,}.
+\]
+The logarithmic expressions require \(x>0\), so
+\[
+x>-4\quad\text{from }x+4>0,
+\qquad
+x>0\quad\text{from }x>0.
+\]
+Hence only
+\[
+x=-2+\sqrt{\,4+e\,}
+\]
+lies in the domain.  
+The negative part should have been omitted.
+</p>
+</details>
+
+    </li>
+
+  </ol>
+</section>
+    
+
+
+
+
+
+
+<footer class="footer">
+      <small>© <span id="year"></span> Shinto Kai · CC BY 4.0</small>
+</footer>
+  </main>
+</div>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
+
+
