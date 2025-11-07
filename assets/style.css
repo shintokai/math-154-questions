@@ -193,4 +193,10 @@ pre{
   border-radius: 8px; /* optional */
 }
 
+main.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;   /* top-aligned */
+  align-items: flex-start;       /* left-aligned */
+}
 
