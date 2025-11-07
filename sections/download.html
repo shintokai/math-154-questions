@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Download PDFs</title>
+<link rel="stylesheet" href="../assets/style.css"/>
+<script>
+  window.MathJax={
+    tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},
+    options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="../assets/site.js" defer></script>
+</head>
+
+<body>
+<header class="header">
+  <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+  <h1 class="title">Download PDF</h1>
+  <p class="subtitle"><a href="../index.html" class="muted">⟵ Home</a></p>
+</header>
+
+<div class="wrap">
+  <aside id="sidebar" class="sidebar">
+    <div class="toc">
+      <h3>Contents</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sections/Module1.html">Module 1 — Foundations of Calculus</a></li>
+        <li><a href="sections/Module2.html">Module 2 — Functions in Business and Economics</a></li>
+
+
+        <li><a href="sections/download.html">Download PDF</a></li>
+
+      </ul>
+    </div>
+  </aside>
+
+  <main class="content">
+  <section>
+    <h2>Available PDFs</h2>
+
+    <p>
+      You may download the PDF files below to view notes and practice problems for each module.
+      Feel free to work through the questions directly on the PDFs.
+    </p>
+
+    <ul style="text-align: left; list-style: disc; padding-left: 1.2rem;">
+      <li>
+        <a href="../PDF/Module 1.pdf" target="_blank">
+          📄 Download Module 1 (PDF)
+        </a>
+      </li>
+
+      <li>
+        <a href="../PDF/Module 2.pdf" target="_blank">
+          📄 Download Module 2 (PDF)
+        </a>
+      </li>
+    </ul>
+  </section>
+</main>
+</div>
+
+
+<footer class="footer">
+  <small>© <span id="year"></span> Shinto Kai · CC BY 4.0</small>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+
+
