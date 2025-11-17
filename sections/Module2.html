@@ -24,20 +24,6 @@
 <div class="wrap">
   <aside id="sidebar" class="sidebar">
     <div class="toc">
-      <h3>Contents</h3>
-
-<details class="toc-sec" open>
-  <summary>Show / Hide</summary>
-
-  <ul>
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../sections/Module1.html">Module 1 — Foundations of Calculus</a></li>
-    <li><a href="../sections/Module2.html">Module 2 — Functions in Business and Economics</a></li>
-    <li><a href="../sections/outcome.html">Learning Outcome</a></li>
-    <li><a href="../sections/download.html">Download PDF</a></li>
-  </ul>
-
-</details>
 
       <h3>On this page</h3>
 
@@ -47,7 +33,7 @@
 
 <details class="toc-sec">
   
-  <summary><a href="#Review">2.1 Review</a></summary>
+  <summary><a href="#Core Concepts">2.1 Core Concepts</a></summary>
   <ul>
     <li><a href="#def-simple-interest">Definition 2.1 — Simple Interest</a></li>
     <li><a href="#def-compound-interest">Definition 2.2 — Compound Interest</a></li>
@@ -112,7 +98,7 @@
   <main class="main">
     <div class="content">
       <nav class="topnav">
-        <a class="pill" href="../index.html">⟵ Home</a>
+        <a class="pill" href="../sections/Module1.html">⟵ Module 1</a>
         <a class="pill" href="../sections/Module3.html">Next: Module 3 ⟶</a>
       </nav>
 
@@ -125,8 +111,8 @@
 </p>
 
 
-<section id="Review">
-  <h2>2.1 Review</h2>
+      <section id="Core Concepts">
+        <h2>2.1 Core Concepts</h2>
 
 <!-- ===== Foundational Material ===== -->
 
@@ -566,6 +552,78 @@
         </p>
       </details>
     </li>
+    <!-- M2 Easy-12 -->
+<li id="module2-easy-12">
+  <a class="q-label" href="#module2-easy-12">Module 2 — Easy — 12</a><br>
+  Consider the graphs of the two functions \(f\) and \(g\) shown below.
+  
+  <div class="img-center">
+    <img src="../Picture/pic8.png"
+         alt="Graphs of f and g"
+         style="max-width:70%;">
+  </div>
+
+  <p>Using the graph, evaluate the following limits or state that they do not exist.</p>
+
+  <ol type="a">
+    <li>\(\displaystyle \lim_{x\to 1} f(x)\)</li>
+    <li>\(\displaystyle \lim_{x\to 2^-} g(x)\)</li>
+    <li>\(\displaystyle \lim_{x\to 2^+} g(x)\)</li>
+    <li>\(\displaystyle \lim_{x\to 2} g(x)\)</li>
+    <li>\(\displaystyle \lim_{x\to 2^+} f(g(x))\)</li>
+  </ol>
+
+  <details class="answer"><summary>Answer</summary>
+    <p>
+      (a) \(3\) &nbsp;&nbsp;
+      (b) \(0\) &nbsp;&nbsp;
+      (c) \(1\) &nbsp;&nbsp;
+      (d) DNE &nbsp;&nbsp;
+      (e) \(f(1)=0\)
+    </p>
+  </details>
+
+  <details class="solution"><summary>Full Solution</summary>
+    <p>
+      (a) As \(x\to 1\), the graph of \(f\) approaches the filled point at height \(3\), so  
+      \[
+        \lim_{x\to 1} f(x)=3.
+      \]
+    </p>
+
+    <p>
+      (b) Approaching \(x=2\) from the left, the graph of \(g\) approaches the open circle at height \(0\), so  
+      \[
+        \lim_{x\to 2^-} g(x)=0.
+      \]
+    </p>
+
+    <p>
+      (c) Approaching \(x=2\) from the right, the graph of \(g\) is constant at height \(1\), so  
+      \[
+        \lim_{x\to 2^+} g(x)=1.
+      \]
+    </p>
+
+    <p>
+      (d) The left-hand and right-hand limits of \(g\) at \(x=2\) are different (0 vs. 1), so the two-sided limit does not exist:
+      \[
+        \lim_{x\to 2} g(x)=\text{DNE}.
+      \]
+    </p>
+
+    <p>
+      (e) As \(x\to 2^+\), we have \(g(x)\to 1\). Thus
+      \[
+        \lim_{x\to 2^+} f(g(x))
+        = f\!\left(\lim_{x\to 2^+} g(x)\right)
+        = f(1)=0.
+      \]
+    </p>
+
+  </details>
+</li>
+
 
 
   </ol>

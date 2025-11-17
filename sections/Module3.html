@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Module 1 — Foundations of Calculus</title>
+<title>Module 3 — Limits & Continuity</title>
 <link rel="stylesheet" href="../assets/style.css"/>
 <script>
   window.MathJax={
@@ -17,7 +17,7 @@
 <body>
 <header class="header">
   <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
-  <h1 class="title">Module 1 — Foundations of Calculus</h1>
+  <h1 class="title">Module 3 — Limits & Continuity</h1>
   <p class="subtitle"><a href="../index.html" class="muted">⟵ Home</a></p>
 </header>
 
@@ -26,1083 +26,1230 @@
     <div class="toc">
       <h3>On this page</h3>
 
-  <details class="toc-sec" open>
-    <summary><a href="#Review">1.1 Review</a></summary>
-    <ul>
-  <li><a href="#prop-domain">Property 1.1 — Domain Restrictions</a></li>
-  <li><a href="#prop-exp-ln">Property 1.2 — \(e^x\) & \(\ln x\)</a></li>
-  <li><a href="#prop-exp-laws">Property 1.3 — Exponent Laws</a></li>
-  <li><a href="#prop-log-laws">Property 1.4 — Log Laws</a></li>
-  <li><a href="#def-compose">Definition 1.5 — Composition</a></li>
-</ul>
+      <details class="toc-sec">
+        <summary><a href="#CoreConcepts">3.1 Core Concepts</a></summary>
+        <ul>
+          <li><a href="#theo-limit">Theorem — Limit</a></li>
+          <li><a href="#method-inf-limit">Method — Limit at Infinity</a></li>
+          <li><a href="#def-continuity">Definition — Continuity</a></li>
+          <li><a href="#theo-ivt">Theorem — IVT (Existence of zeros)</a></li>
+          <li><a href="#method-eval-limits">Method — Evaluating the Limits</a></li>
+        </ul>
+      </details>
 
-  </details>
+      <details class="toc-sec">
+        <summary><a href="#Easy">3.2 Easy</a></summary>
+        <ul class="sublist">
+          <li><a href="#module3-easy-1">Easy — 1</a></li>
+          <li><a href="#module3-easy-2">Easy — 2</a></li>
+          <li><a href="#module3-easy-3">Easy — 3</a></li>
+          <li><a href="#module3-easy-4">Easy — 4</a></li>
+          <li><a href="#module3-easy-5">Easy — 5</a></li>
+          <li><a href="#module3-easy-6">Easy — 6</a></li>
+          <li><a href="#module3-easy-7">Easy — 7</a></li>
+          <li><a href="#module3-easy-8">Easy — 8</a></li>
+          <li><a href="#module3-easy-9">Easy — 9</a></li>
+          <li><a href="#module3-easy-10">Easy — 10</a></li>
+        </ul>
+      </details>
 
-  <details class="toc-sec">
-    <summary><a href="#Easy">1.2 Easy</a></summary>
-    <ul class="sublist">
-      <li><a href="#module1-easy-1">Easy — 1</a></li>
-      <li><a href="#module1-easy-2">Easy — 2</a></li>
-      <li><a href="#module1-easy-3">Easy — 3</a></li>
-      <li><a href="#module1-easy-4">Easy — 4</a></li>
-      <li><a href="#module1-easy-5">Easy — 5</a></li>
-      <li><a href="#module1-easy-6">Easy — 6</a></li>
-      <li><a href="#module1-easy-7">Easy — 7</a></li>
-      <li><a href="#module1-easy-8">Easy — 8</a></li>
-      <li><a href="#module1-easy-9">Easy — 9</a></li>
-      <li><a href="#module1-easy-10">Easy — 10</a></li>
-      <li><a href="#module1-easy-11">Easy — 11</a></li>
-    </ul>
-  </details>
+      <details class="toc-sec">
+        <summary><a href="#Indeterminate">3.3 Indeterminate</a></summary>
+        <ul class="sublist">
+          <li><a href="#module3-indeterminate-1">Indeterminate — 1</a></li>
+          <li><a href="#module3-indeterminate-2">Indeterminate — 2</a></li>
+          <li><a href="#module3-indeterminate-3">Indeterminate — 3</a></li>
+          <li><a href="#module3-indeterminate-4">Indeterminate — 4</a></li>
+          <li><a href="#module3-indeterminate-5">Indeterminate — 5</a></li>
+          <li><a href="#module3-indeterminate-6">Indeterminate — 6</a></li>
+          <li><a href="#module3-indeterminate-7">Indeterminate — 7</a></li>
+          <li><a href="#module3-indeterminate-8">Indeterminate — 8</a></li>
+          <li><a href="#module3-indeterminate-9">Indeterminate — 9</a></li>
+          <li><a href="#module3-indeterminate-10">Indeterminate — 10</a></li>
+          <li><a href="#module3-indeterminate-11">Indeterminate — 11</a></li>
+          <li><a href="#module3-indeterminate-12">Indeterminate — 12</a></li>
+        </ul>
+      </details>
 
-  <details class="toc-sec">
-    <summary><a href="#Intermediate">1.3 Intermediate</a></summary>
-    <ul class="sublist">
-      <li><a href="#module1-intermediate-1">Intermediate — 1</a></li>
-      <li><a href="#module1-intermediate-2">Intermediate — 2</a></li>
-      <li><a href="#module1-intermediate-3">Intermediate — 3</a></li>
-      <li><a href="#module1-intermediate-4">Intermediate — 4</a></li>
-      <li><a href="#module1-intermediate-5">Intermediate — 5</a></li>
-      <li><a href="#module1-intermediate-6">Intermediate — 6</a></li>
-    </ul>
-  </details>
-
-  <details class="toc-sec">
-    <summary><a href="#Challenging">1.4 Challenging</a></summary>
-    <ul class="sublist">
-      <li><a href="#module1-challenging-1">Challenging — 1</a></li>
-      <li><a href="#module1-challenging-2">Challenging — 2</a></li>
-    </ul>
-  </details>
-</nav>
-
-
+      <details class="toc-sec">
+        <summary><a href="#Challenging">3.4 Challenging</a></summary>
+        <ul class="sublist">
+          <li><a href="#module3-challenging-1">Challenging — 1</a></li>
+          <li><a href="#module3-challenging-2">Challenging — 2</a></li>
+          <li><a href="#module3-challenging-3">Challenging — 3</a></li>
+          <li><a href="#module3-challenging-4">Challenging — 4</a></li>
+          <li><a href="#module3-challenging-5">Challenging — 5</a></li>
+          <li><a href="#module3-challenging-6">Challenging — 6</a></li>
+          <li><a href="#module3-challenging-7">Challenging — 7</a></li>
+        </ul>
+      </details>
     </div>
   </aside>
 
   <main class="main">
     <div class="content">
       <nav class="topnav">
-        <a class="pill" href="../index.html">⟵ Home</a>
-        <a class="pill" href="../sections/Module2.html">Next: Module 2 ⟶</a>
+        <a class="pill" href="../sections/Module2.html"> ⟵ Module 2</a>
+        <a class="pill" href="../sections/Module4.html"> Next: Module 4 ⟶</a>
       </nav>
 
+    <p>
+  You may click 
+  <a href="../PDF/Module 3.pdf" target="_blank" rel="noopener">
+    <strong>here</strong>
+  </a>
+  to download the PDF version.
+</p>
 
 
-<section id="Review">
-  <h2>1.1 Review</h2>
+      <!-- =============================== -->
+      <!-- 3.1 Core Concepts               -->
+      <!-- =============================== -->
+      <section id="CoreConcepts">
+        <h2>3.1 Core Concepts</h2>
 
-<!-- ===== Foundational Material ===== -->
+        <div class="callout theorem" id="theo-limit">
+          <div class="block-title">Theorem — Limit</div>
+          <p>
+            Assume that \(f(x)\) exists for all values \(x\) close (but not necessarily equal) to \(a\). Then there is a
+            \[
+              \lim_{x\to a} f(x)=L
+            \]
+            if and only if
+            \[
+              \lim_{x\to a^+} f(x)=\lim_{x\to a^-} f(x)=L.
+            \]
+          </p>
+        </div>
 
-<!-- ===================== -->
-<!-- Property 1.1 — Domain Restrictions -->
-<!-- ===================== -->
-<div class="callout theorem" id="prop-domain">
-  <div class="block-title">Property 1.1 — Domain Restrictions</div>
-  <p>
-    The domain of an expression is the set of all real numbers for which the expression is defined. 
-    The following restrictions must be satisfied:
-  </p>
-  <ol>
-    <li><strong>Division by zero.</strong>  
-      A denominator may not be zero.
-    </li>
-    <li><strong>Even radicals.</strong>  
-      An even-indexed radical requires a nonnegative radicand.
-    </li>
-    <li><strong>Logarithms.</strong>  
-      The argument of $\log_b x$ (in particular $\ln x$) must satisfy $x>0$.
-    </li>
-  </ol>
-</div>
+        <div class="callout method" id="method-inf-limit">
+          <div class="block-title">Method — Limit at Infinity</div>
+          <p>
+            To evaluate the limit at infinity of a rational function we divide the numerator and denominator of the expression by \(x^n\), where \(n\) is the highest power present in the denominator of the expression.
+          </p>
+        </div>
 
+        <div class="callout definition" id="def-continuity">
+          <div class="block-title">Definition — Continuity</div>
+          <p>A function \(f\) is <strong>continuous</strong> at a number \(a\) if </p>
+          <ol>
+            <li>\(f(a)\) is defined, </li>
+            <li>\(\lim\limits_{x\to a}f(x)\) exists,</li>
+            <li>\(f(a)=\lim\limits_{x\to a}f(x)\)</li>
+          </ol>
+          <p>A function \(f\) is <strong>continuous on an interval</strong> if it is continuous at every number in the interval.</p>
+        </div>
 
-<!-- ===================== -->
-<!-- Property 1.2 — Inverse Nature of e^x and ln x -->
-<!-- ===================== -->
-<div class="callout theorem" id="prop-exp-ln">
-  <div class="block-title">Property 1.2 — Relationship Between \(e^x\) and \(\ln x\)</div>
-  <p>
-    The exponential function $e^x$ and the natural logarithm $\ln x$ are inverse functions.  
-    In particular,
-  </p>
-  <ol>
-    <li>$e^{\ln x} = x$, for $x>0$;</li>
-    <li>$\ln(e^x) = x$, for all real $x$.</li>
-  </ol>
-  <p class="muted">
-    Note that $\ln(x)$ is defined as the logarithm base \(e\), Euler’s number; that is,
-    $\ln(x) = \log_e(x)$.
-  </p>
-</div>
+        <div class="callout theorem" id="theo-ivt">
+          <div class="block-title">Theorem — IVT (Existence of zeros)</div>
+          <p>Assume that </p>
+          <ol>
+            <li>\(f\) is continuous on a closed interval \([a, b]\),</li>
+            <li>\(f(a)\) and \(f(b)\) have different signs.</li>
+          </ol>
+          <p>Then there exists at least one solution of the equation \(f(x)=0\) in the interval \((a, b)\).</p>
+        </div>
 
+        <div class="callout method" id="method-eval-limits">
+          <div class="block-title">Method — Evaluating the Limits</div>
+          <p>When evaluating limits, you may encounter these four scenarios:</p>
+          <ol>
+            <li>If substituting the value into the function gives a result of \(\dfrac{c}{\infty}\), where \(c\) is any real number, then the limit will be 0. </li>
+            <li>If the substitution results in \(\dfrac{\pm\infty}{c}\), where \(c\) is a non-zero real number, then the limit will be \(\pm\infty\). </li>
+            <li>If the substitution results in \(\dfrac{c}{0}\), the limit could be either \(+\infty\), \(-\infty\), or it might not exist (DNE). </li>
+            <li>If the substitution results in an indeterminate form, such as \(\dfrac{0}{0}\) or \(\dfrac{\infty}{\infty}\), then you cannot directly determine the limit. In such cases, use algebraic techniques, such as factoring or cancelling terms, to simplify the function.</li>
+          </ol>
+        </div>
+      </section>
 
-<!-- ===================== -->
-<!-- Property 1.3 — Laws of Exponents -->
-<!-- ===================== -->
-<div class="callout theorem" id="prop-exp-laws">
-  <div class="block-title">Property 1.3 — Laws of Exponents</div>
-  <p>
-    Let $a$ and $b$ be positive real numbers, and let $x,y\in\mathbb{R}$. Then
-  </p>
-  <ol>
-    <li>$b^x b^y = b^{\,x+y}$</li>
-    <li>$\dfrac{b^x}{b^y} = b^{\,x-y}$</li>
-    <li>$(b^x)^y = b^{\,xy}$</li>
-    <li>$(ab)^x = a^x b^x$</li>
-    <li>$\displaystyle\left(\dfrac{a}{b}\right)^x = \dfrac{a^x}{b^x}$</li>
-  </ol>
-</div>
-
-
-<!-- ===================== -->
-<!-- Property 1.4 — Laws of Logarithms -->
-<!-- ===================== -->
-<div class="callout theorem" id="prop-log-laws">
-  <div class="block-title">Property 1.4 — Laws of Logarithms</div>
-  <p>
-    For $a>0$, $A>0$, $B>0$, and $x\in\mathbb{R}$,
-  </p>
-  <ol>
-    <li>$\ln(AB) = \ln A + \ln B$</li>
-    <li>$\displaystyle \ln\!\left(\frac{A}{B}\right) = \ln A - \ln B$</li>
-    <li>$\ln(e^x) = x$</li>
-    <li>$\ln 1 = 0$</li>
-    <li>$\ln(a^x) = x\ln a$</li>
-    <li>$a^x = e^{x\ln a}$</li>
-  </ol>
-  <p class="muted">
-    Although most examples use natural logarithms ($\ln$), these identities hold for all logarithmic bases.
-  </p>
-</div>
-
-
-<!-- ===================== -->
-<!-- Definition 1.5 — Composition -->
-<!-- ===================== -->
-<div class="callout definition" id="def-compose">
-  <div class="block-title">Definition 1.5 — Composition of Functions</div>
-  <p>
-   A composition function is a function where the output of one function is used as the input for another function, creating a new combined function.
-  Here is the notation for the composition function:
-  $$(f\circ g)(x) :=f(g(x))$$
-  </p>
-</div>
-
-
-<!-- ===== End Foundational Material ===== -->
-<section id="Easy">
-<h2>Easy <span class="badge">★</span></h2>
+      <!-- =============================== -->
+      <!-- 3.2 Easy                        -->
+      <!-- =============================== -->
+      <section id="Easy">
+  <h2>Easy <span class="badge">★</span></h2>
 
   <ol class="q-list">
 
     <!-- Easy-1 -->
-    <li id="module1-easy-1">
-      <a class="q-label" href="#module1-easy-1">Module 1 — Easy — 1</a><br>
-      Determine the domain of \(f(x)=\sqrt{x-5}\) and express it in interval notation.
+    <li id="module3-easy-1">
+      <a class="q-label" href="#module3-easy-1">Module 3 — Easy — 1</a><br>
+      Suppose \(\displaystyle \lim_{x\to a} f(x)=0\) and \(\displaystyle \lim_{x\to a} g(x)=0\).
+      Which of the following limits can you compute, given the information?
+      <ol type="a">
+        <li>\(\displaystyle \lim_{x\to a} \frac{f(x)}{5}\)</li>
+        <li>\(\displaystyle \lim_{x\to a} \frac{5}{f(x)}\)</li>
+        <li>\(\displaystyle \lim_{x\to a} \frac{f(x)}{g(x)}\)</li>
+        <li>\(\displaystyle \lim_{x\to a} f(x)g(x)\)</li>
+      </ol>
       <details class="answer"><summary>Answer</summary>
-        <p>Domain: \([5,\infty)\).</p>
+        <p>(a) and (d).</p>
       </details>
-      </details><details class="solution"><summary>Full Solution</summary>
-        <p>To find the domain of the function $f(x) = \sqrt{x-5}$, we must determine the values of $x$ for which the expression under the square root is non-negative. Thus, we need to solve the inequality:
-
-        $$x - 5 \geq 0$$
-
-        Solving for $x$, we get:
-
-        $$x \geq 5$$
-
-        Now, we can write the domain in interval notation:
-
-        Domain of $f(x) = [5, \infty)$
-      </p>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          By limit laws, \(\displaystyle \lim_{x\to a}\frac{f(x)}{5}=\frac{1}{5}\lim_{x\to a}f(x)=0\), so (a) is computable.
+        </p>
+        <p>
+          For (b), since \(\displaystyle\lim_{x\to a} f(x)=0\), the reciprocal \(\frac{5}{f(x)}\) need not approach a finite value; the expression can diverge, so it is not computable from the given information alone.
+        </p>
+        <p>
+          For (c), \(\frac{f(x)}{g(x)}\) is a \(\frac{0}{0}\) indeterminate form; without more information, the limit cannot be determined.
+        </p>
+        <p>
+          For (d), \(\displaystyle\lim_{x\to a} f(x)g(x)=\bigl(\lim_{x\to a} f(x)\bigr)\bigl(\lim_{x\to a} g(x)\bigr)=0\cdot 0=0\), so it is computable.
+        </p>
       </details>
     </li>
 
     <!-- Easy-2 -->
-    <li id="module1-easy-2">
-      <a class="q-label" href="#module1-easy-2">Module 1 — Easy — 2</a><br>
-      Determine the domain of \(\displaystyle f(x)=\frac{1}{\sqrt{x-5}}\) and express it in interval notation.
+    <li id="module3-easy-2">
+      <a class="q-label" href="#module3-easy-2">Module 3 — Easy — 2</a><br>
+      Evaluate \(\displaystyle \lim_{x\to 6} \frac{4(x-6)^2}{x}\).
       <details class="answer"><summary>Answer</summary>
-        <p>Domain: \((5,\infty)\).</p>
+        <p>\(0\).</p>
       </details>
-      </details><details class="solution"><summary>Full Solution</summary>
-        <p>To find the domain of the function $f(x) = \frac{1}{\sqrt{x-5}}$, we must determine the values of $x$ for which the expression under the square root is non-negative and also non-zero since $\sqrt{x-5}$ is in the denominator. Thus, we need to solve the inequality:
-
-        $$x - 5 > 0$$
-
-        Solving for $x$, we get:
-
-        $$x > 5$$
-
-        Now, we can write the domain in interval notation:
-
-        Domain of $f(x) = (5, \infty)$
-      </p>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          Substitute \(x=6\):
+        </p>
+        <p>
+          \[
+            \lim_{x\to 6}\frac{4(x-6)^2}{x}
+            =\frac{4(6-6)^2}{6}
+            =\frac{0}{6}
+            =0.
+          \]
+        </p>
       </details>
     </li>
 
-    <!-- Easy-3 -->
-    <li id="module1-easy-3">
-      <a class="q-label" href="#module1-easy-3">Module 1 — Easy — 3</a><br>
-      Determine the domain of \(f(x)=e^{-x}\) and express it in interval notation.
-      <details class="answer"><summary>Answer</summary>
-        <p>Domain: \((-\infty,\infty)\).</p>
-      </details>
-      </details><details class="solution"><summary>Full Solution</summary>
-        <p>To find the domain of\[f(x) = e^{-x},\]note that the exponential function is defined for every real input. Since \(-x\) can take any real value as \(x\) ranges over \(\mathbb{R}\), the expression \(e^{-x}\) is always defined.
-          Thus, the domain of \(f\) is \[(-\infty, \infty).\]
-      </p>
-      </details>
-    </li>
+   <!-- Easy-3 -->
+<li id="module3-easy-3">
+  <a class="q-label" href="#module3-easy-3">Module 3 — Easy — 3</a><br>
+  \(\displaystyle \lim_{x\to 2}\left(\frac{6x-2}{2x+1}\right)^3\).
+  <details class="answer"><summary>Answer</summary>
+    <p>\(8\).</p>
+  </details>
+  <details class="solution"><summary>Full Solution</summary>
+    <p>
+      First, evaluate the limit of the inner rational expression.
+      \[
+        \lim_{x\to 2}\frac{6x-2}{2x+1}
+        =\frac{6(2)-2}{2(2)+1}
+        =\frac{12-2}{5}
+        =\frac{10}{5}
+        =2.
+      \]
+    </p>
+    <p>
+      Since the cube function is continuous for all real numbers, we can apply the limit law for continuous functions:
+      \[
+        \lim_{x\to 2}\left(\frac{6x-2}{2x+1}\right)^3
+        =\left(\lim_{x\to 2}\frac{6x-2}{2x+1}\right)^3
+        =(2)^3
+        =8.
+      \]
+    </p>
+  </details>
+</li>
+
 
     <!-- Easy-4 -->
-    <li id="module1-easy-4">
-      <a class="q-label" href="#module1-easy-4">Module 1 — Easy — 4</a><br>
-      Determine the domain of \(f(x)=\ln(x+2)\) and express it in interval notation.
+<li id="module3-easy-4">
+  <a class="q-label" href="#module3-easy-4">Module 3 — Easy — 4</a><br>
+  \(\displaystyle \lim_{x\to 2}\frac{x-2}{x^2-4}\).
+  <details class="answer"><summary>Answer</summary>
+    <p>\(\dfrac{1}{4}\).</p>
+  </details>
+  <details class="solution"><summary>Full Solution</summary>
+    <p>
+      First, substitute \(x=2\) directly into the expression:
+      \[
+        \frac{2-2}{2^2-4} = \frac{0}{0}.
+      \]
+      This is an <strong>indeterminate form</strong>, so we need to simplify the expression before evaluating the limit.
+    </p>
+
+    <p>
+      Factor the denominator:
+      \[
+        x^2 - 4 = (x - 2)(x + 2).
+      \]
+      For \(x \neq 2\),
+      \[
+        \frac{x - 2}{x^2 - 4} = \frac{x - 2}{(x - 2)(x + 2)} = \frac{1}{x + 2}.
+      \]
+    </p>
+
+    <p>
+      Now take the limit of the simplified form:
+      \[
+        \lim_{x\to 2}\frac{x-2}{x^2-4}
+        = \lim_{x\to 2}\frac{1}{x+2}
+        = \frac{1}{4}.
+      \]
+    </p>
+  </details>
+</li>
+
+
+    <!-- Easy-5 -->
+    <li id="module3-easy-5">
+      <a class="q-label" href="#module3-easy-5">Module 3 — Easy — 5</a><br>
+      \(\displaystyle \lim_{r\to -5}\frac{r}{r^2+10r+25}\).
       <details class="answer"><summary>Answer</summary>
-        <p>Domain: \((-2,\infty)\).</p>
+        <p>Diverges to \(-\infty\) (so the limit does not exist as a real number).</p>
       </details>
-      </details><details class="solution"><summary>Full Solution</summary>
-        <p>To find the domain of the function $f(x) = \ln(x+2)$, we must determine the values of $x$ for which the expression under the $\ln()$ is non-negative and also non-zero. Thus, we need to solve the inequality:
-
-        $$x + 2 > 0$$
-
-        Solving for $x$, we get:
-
-        $$x > -2$$
-
-        Now, we can write the domain in interval notation:
-
-        Domain of $f(x) = (-2, \infty)$
-      </p>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          Note \(r^2+10r+25=(r+5)^2\). Then
+          \[
+            \frac{r}{r^2+10r+25}
+            =\frac{r}{(r+5)^2}.
+          \]
+          As \(r\to -5\), the denominator \((r+5)^2\to 0^+\) while the numerator \(r\to -5\). Thus the quotient tends to a negative number divided by a very small positive number, i.e. \(-\infty\). Therefore the (two-sided) limit does not exist as a finite real number, and the divergence is to \(-\infty\).
+        </p>
       </details>
     </li>
 
-    <!-- Easy-5 -->
-    <li id="module1-easy-5">
-      <a class="q-label" href="#module1-easy-5">Module 1 — Easy — 5</a><br>
-      Determine the domain of \(f(x)=\ln(x^2-4)\) and express it in interval notation.
-      <details class="answer"><summary>Answer</summary>
-        <p>Domain: \((-\infty,-2)\cup(2,\infty)\).</p>
-      </details><details class="solution"><summary>Full Solution</summary>
+    <!-- Easy-6 -->
+<li id="module3-easy-6">
+  <a class="q-label" href="#module3-easy-6">Module 3 — Easy — 6</a><br>
+  \(\displaystyle \lim_{x\to\infty}\frac{5x^2+10}{3x^3+2x^2+x}\).
+  <details class="answer"><summary>Answer</summary>
+    <p>\(0\).</p>
+  </details>
+  <details class="solution"><summary>Full Solution</summary>
+    <p>
+      First, note that direct substitution as \(x \to \infty\) gives an indeterminate form \(\dfrac{\infty}{\infty}\).
+      To this end, divide both the numerator and denominator by \(x^3\) which is the highest power of \(x\) in the denominator:
+      \[
+        \lim_{x\to\infty}\frac{5x^2+10}{3x^3+2x^2+x}
+        = \lim_{x\to\infty}\frac{\frac{5}{x}+\frac{10}{x^3}}{3+\frac{2}{x}+\frac{1}{x^2}}.
+      \]
+    </p>
 
-  <p>
-    To find the domain of \(f(x)=\ln(x^2-4)\), the argument of the logarithm must be positive:
-  </p>
-
- <p>
-  \( x^2 - 4 > 0 \implies (x-2)(x+2) > 0 \implies (-\infty,-2)\text{ or }(2,\infty) \)
-</p>
-
-
-  <div class="img-center">
-    <img src="../Picture/pic1.jpg" style="max-width:70%;">
-  </div>
-
-  <p>
-    Therefore, the domain is:
-    \[
-      (-\infty,-2)\cup(2,\infty)
-    \]
-  </p>
-</details>
-<details class="video">
+    <p>
+      As \(x \to \infty\), all terms with \(\frac{1}{x}\), \(\frac{1}{x^2}\), or \(\frac{1}{x^3}\) tend to \(0\):
+      \[
+        \lim_{x\to\infty}\frac{\frac{5}{x}+\frac{10}{x^3}}{3+\frac{2}{x}+\frac{1}{x^2}}
+        = \frac{0}{3} = 0.
+      \]
+    </p>
+  </details>
+  <details class="video">
     <summary>Video solution</summary>
     <p>
       The video solution is available
-      <a href="https://drive.google.com/file/d/1Kjlj69TrLCIgMb9yfkjUHQ8RaLc-P2V7/view?usp=drive_link"
+      <a href="https://drive.google.com/file/d/1ybkAmfgIyJ0aa4HU4sgFF21gNtjyCw_s/view?usp=drive_link"
          target="_blank" rel="noopener">
         here
       </a>.
     </p>
   </details>
-
-    </li>
-
-    <!-- Easy-6 -->
-    <li id="module1-easy-6">
-      <a class="q-label" href="#module1-easy-6">Module 1 — Easy — 6</a><br>
-      Determine the domain of \(\displaystyle f(x)=\frac{1}{\ln(x^2-4)}\).
-      <details class="answer"><summary>Answer</summary>
-        <p>Domain: \((-\infty,-\sqrt 5)\cup(-\sqrt 5,-2)\cup(2,\sqrt 5)\cup(\sqrt 5,\infty)\).</p>
-      </details>
-      </details><details class="solution"><summary>Full Solution</summary>
-<p>
-In addition to the domain found in
-<a href="#module1-easy-5"><strong>Module&nbsp;1 — Easy — 5</strong></a>,
-we must ensure that \(\ln(x^2 - 4)\) is not zero.
-</p>
-
-<p>
-  Since \(\ln(t)=0\) when \(t=1\), we solve
-</p>
-
-$$
-x^2 - 4 = 1
-\quad\implies\quad
-x^2 = 5
-\quad\implies\quad
-x = \pm\sqrt{5}.
-$$
-
-<p>
-  Thus, \(x = \pm\sqrt{5}\) must be excluded from the domain.
-</p>
-
-<p>
-  Combining this restriction with the domain obtained previously,
-  we exclude \(\pm\sqrt{5}\) from
-  \((-\infty,-2)\cup(2,\infty)\).
-</p>
-
-<p>
-  Therefore, the domain is:
-</p>
-
-$$
-(-\infty,-\sqrt5)\;
-\cup\;
-(-\sqrt5,-2)\;
-\cup\;
-(2,\sqrt5)\;
-\cup\;
-(\sqrt5,\infty).
-$$
+</li>
 
 
-      </details>
-    </li>
+<!-- Easy-7 -->
+<li id="module3-easy-7">
+  <a class="q-label" href="#module3-easy-7">Module 3 — Easy — 7</a><br>
+  \(\displaystyle \lim_{x\to -\infty} 2^x\).
+  <details class="answer"><summary>Answer</summary>
+    <p>\(0\).</p>
+  </details>
 
-    <!-- Easy-7 -->
-    <li id="module1-easy-7">
-      <a class="q-label" href="#module1-easy-7">Module 1 — Easy — 7</a><br>
-      Solve \(4e^{x-1}=4\).
-      <details class="answer"><summary>Answer</summary>
-        <p>\(x=1\).</p>
-      </details>
-      </details><details class="solution"><summary>Full Solution</summary>
-<p>
-  We solve
-</p>
+  <details class="solution"><summary>Full Solution</summary>
+    <p>
+      Write \(2^x\) as a reciprocal:
+      \[
+        2^x=\frac{1}{2^{-x}}.
+      \]
+      As \(x\to -\infty\), we have \(-x\to +\infty\). Since the exponential function grows without bound,
+      \[
+        \lim_{x\to -\infty} 2^{-x}=\infty.
+      \]
+      Therefore, by the reciprocal limit law,
+      \[
+        \lim_{x\to -\infty}2^x
+        =\lim_{x\to -\infty}\frac{1}{2^{-x}}
+        =\frac{1}{\infty}
+        =0.
+      \]
+    </p>
 
-$$
-4e^{x-1} = 4
-\;\;\Longrightarrow\;\;
-e^{x-1} = 1
-$$
+    <p><strong>Alternative Solution:</strong></p>
+    <p>
+      The graph of \(y=2^x\) is strictly increasing, passes through \((0,1)\), and has a horizontal asymptote \(y=0\) as \(x\to -\infty\).
+      This shows that the function values approach \(0\) for large negative \(x\).
+    </p>
 
-<p>
-  Taking the natural logarithm of both sides:
-</p>
+    <div class="img-center">
+      <img src="../Picture/pic7.png"
+           alt="Graph of y=2^x showing horizontal asymptote y=0 as x→−∞"
+           style="max-width:70%;">
+    </div>
+  </details>
+</li>
 
-$$
-\ln\!\bigl(e^{x-1}\bigr) = \ln(1)
-$$
 
-<p>
-  Using \(\ln(e^u)=u\) and \(\ln(1) = 0\),
-</p>
 
-$$
-x - 1 = 0
-\;\;\Longrightarrow\;\;
-x = 1.
-$$
-
-      </details>
-    </li>
 
     <!-- Easy-8 -->
-    <li id="module1-easy-8">
-      <a class="q-label" href="#module1-easy-8">Module 1 — Easy — 8</a><br>
-      Solve \(2e^{5x}-1=0\).
+    <li id="module3-easy-8">
+      <a class="q-label" href="#module3-easy-8">Module 3 — Easy — 8</a><br>
+      Suppose \(f(t)\) is continuous at \(t=5\). Is it true or false that \(t=5\) is in the domain of \(f(t)\)?
       <details class="answer"><summary>Answer</summary>
-        <p>\(x=-\dfrac{\ln 2}{5}\).</p>
+        <p>True.</p>
       </details>
-      </details><details class="solution"><summary>Full Solution</summary>
-$$
-2e^{5x}-1=0
-\Rightarrow
-e^{5x}=\tfrac12
-\Rightarrow
-\ln(e^{5x})=\ln\!\left(\tfrac12\right)
-\Rightarrow
-5x = \ln\!\left(\tfrac12\right)
-\Rightarrow
-x = \frac{\ln(\tfrac12)}{5} = -\frac{\ln(2)}{5}
-$$
-
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          By definition of continuity at \(a\), the value \(f(a)\) must be defined. Therefore, if \(f\) is continuous at \(t=5\), then \(5\) is in the domain of \(f\).
+        </p>
       </details>
     </li>
 
     <!-- Easy-9 -->
-    <li id="module1-easy-9">
-      <a class="q-label" href="#module1-easy-9">Module 1 — Easy — 9</a><br>
-      Solve \(3+2\ln\!\left(\frac{x}{7}+3\right)=-4\).
+    <li id="module3-easy-9">
+      <a class="q-label" href="#module3-easy-9">Module 3 — Easy — 9</a><br>
+      Suppose \(\displaystyle \lim_{t\to 5} f(t)=17\), and suppose \(f(t)\) is continuous at \(t=5\). Is it true or false that \(f(5)=17\)?
       <details class="answer"><summary>Answer</summary>
-        <p>\(x=7\bigl(e^{-7/2}-3\bigr)\).</p>
+        <p>True.</p>
       </details>
-      </details><details class="solution"><summary>Full Solution</summary>
-$$
-3 + 2\ln\!\left(\frac{x}{7} + 3\right) = -4
-\Rightarrow
-2\ln\!\left(\frac{x}{7}+3\right) = -7
-\Rightarrow
-\ln\!\left(\frac{x}{7}+3\right) = -\frac72
-$$
-$$
-\Rightarrow
-e^{\ln\left(\frac{x}{7}+3\right)} = e^{-7/2}
-\Rightarrow
-\frac{x}{7} + 3 = e^{-7/2}
-\Rightarrow
-x = 7\left(e^{-7/2} - 3\right)
-$$
-
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          Continuity at \(t=5\) means \(\displaystyle \lim_{t\to 5} f(t)=f(5)\). Given the limit equals \(17\), it follows that \(f(5)=17\).
+        </p>
       </details>
     </li>
 
     <!-- Easy-10 -->
-    <li id="module1-easy-10">
-      <a class="q-label" href="#module1-easy-10">Module 1 — Easy — 10</a><br>
-      Compute the following:
-      <ol type="a">
-        <li>\(a^5\cdot a^7\)</li>
-        <li>\(\dfrac{a^3}{a^2}\)</li>
-        <li>\((3a^2)^2\)</li>
-        <li>\(2^5\cdot 4^{-2}\)</li>
-      </ol>
-      <details class="answer"><summary>Answer</summary>
-        <ol type="a">
-          <li>\(a^{12}\)</li>
-          <li>\(a\)</li>
-          <li>\(9a^4\)</li>
-          <li>\(2\)</li>
-        </ol>
-      </details>
-      </details><details class="solution"><summary>Full Solution</summary>
-<ol type="a">
-  <li>
-    \(a^{5+7} = a^{12}\)
-  </li>
+<li id="module3-easy-10">
+  <a class="q-label" href="#module3-easy-10">Module 3 — Easy — 10</a><br>
+  Find all points for which the function is continuous \(f(x)=\displaystyle \frac{1}{x^2-1}\).
+  <details class="answer"><summary>Answer</summary>
+    <p>Continuous on \((-\infty,-1)\cup(-1,1)\cup(1,\infty)\).</p>
+  </details>
 
-  <li>
-    \(a^{3-2} = a^1 = a\)
-  </li>
+  <details class="solution"><summary>Full Solution</summary>
+    <p>
+      The given function is
+      \[
+        f(x) = \frac{1}{x^2 - 1}.
+      \]
+      This is a <strong>rational function</strong>, that is, a quotient of two polynomials.
+      Since polynomials are continuous for all real numbers, the only possible discontinuities
+      occur where the denominator is zero.
+    </p>
 
-  <li>
-    \((3)^2 (a^2)^2 = 9a^4\)
-  </li>
+    <p>
+      Set the denominator equal to zero to find these points:
+      \[
+        x^2 - 1 = 0.
+      \]
+      Factor:
+      \[
+        (x - 1)(x + 1) = 0.
+      \]
+      Therefore,
+      \[
+        x = 1 \quad \text{or} \quad x = -1.
+      \]
+    </p>
 
-  <li>
-    \(2^5 \times (2^2)^{-2} = 2^5 \times 2^{-4} = 2^1 = 2\)
-  </li>
-</ol>
+    <p>
+      At these \(x\)-values, the denominator becomes \(0\), so \(f(x)\) is undefined.
+      Hence, \(f(x)\) is discontinuous at \(x = -1\) and \(x = 1\).
+    </p>
 
-      </details>
-    </li>
+    <p>
+      For all other values of \(x\), the denominator \(x^2 - 1 \neq 0\), so \(f(x)\) is continuous.
+      In interval notation, the set of all points where \(f\) is continuous is:
+      \[
+        (-\infty,-1)\cup(-1,1)\cup(1,\infty).
+      \]
+    </p>
+  </details>
+</li>
 
-    <!-- Easy-11 -->
-    <li id="module1-easy-11">
-      <a class="q-label" href="#module1-easy-11">Module 1 — Easy — 11</a><br>
-      Simplify each expression:
-      <ol type="a">
-        <li>\(\ln 8+\ln 2\)</li>
-        <li>\(\ln 54-2\ln 2+\ln 2\)</li>
-      </ol>
-      <details class="answer"><summary>Answer</summary>
-        <ol type="a">
-          <li>\(\ln 16\)</li>
-          <li>\(\ln 27\)</li>
-        </ol>
-      </details>
-      </details><details class="solution"><summary>Full Solution</summary>
-<p>
-  These two questions can be evaluated using logarithmic properties.
-</p>
-
-<ol type="a">
-
-  <li>
-    $$
-    \begin{aligned}
-    \ln(8) + \ln(2)
-      &= \ln(8 \cdot 2) \\
-      &= \ln(16)
-    \end{aligned}
-    $$
-  </li>
-
-  <li>
-    $$
-    \begin{aligned}
-    \ln(54) - 2\ln(2) + \ln(2)
-      &= \ln(54) - \ln(2^2) + \ln(2) \\
-      &= \ln\!\left(\frac{54 \cdot 2}{4}\right) \\
-      &= \ln(27)
-    \end{aligned}
-    $$
-  </li>
-
-</ol>
-
-      </details>
-    </li>
 
   </ol>
 </section>
 
+
 <!-- =============================== -->
-<!-- Module 1 — Intermediate (⋆⋆)   -->
+<!-- 3.3 Indeterminate               -->
 <!-- =============================== -->
-<section id="Intermediate">
-<h2>Intermediate <span class="badge">★★</span></h2>
-<ol class="q-list">
+<section id="Indeterminate">
+  <h2>Indeterminate <span class="badge">★★</span></h2>
+  <ol class="q-list">
 
-  <!-- Intermediate-1 -->
-  <li id="module1-intermediate-1">
-    <a class="q-label" href="#module1-intermediate-1">Module 1 — Intermediate — 1</a><br>
-    Determine the domain of \(f(x)=\ln(\ln(x^2-4))\) and express it in interval notation.
-    <details class="answer"><summary>Answer</summary>
-     <p>Domain: $(-\infty, -\sqrt{5}) \cup (\sqrt{5}, \infty)$<p></p>
-    </details>
-    <details class="solution"><summary>Full Solution</summary>
-<p>
-To find the domain of the function
-\(f(x) = \ln(\ln(x^2 - 4))\),
-we must determine the values of \(x\) for which the composition of logarithms is defined.
-</p>
+    <!-- Indeterminate-1 -->
+    <li id="module3-indeterminate-1">
+      <a class="q-label" href="#module3-indeterminate-1">Module 3 — Indeterminate — 1</a><br>
+      Find two functions \(f(x)\) and \(g(x)\) that satisfy \(\lim\limits_{x\to 5}f(x)=\lim\limits_{x\to 5}g(x)=0\) and \(\displaystyle \lim\limits_{x\to 5}\frac{f(x)}{g(x)}=3\).
+      <details class="answer"><summary>Answer</summary>
+        <p>One choice: \(f(x)=3(x-5)\), \(g(x)=(x-5)\).</p>
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          Take \(f(x)=3(x-5)\) and \(g(x)=x-5\). Then \(\lim\limits_{x\to 5}f(x)=0\) and \(\lim\limits_{x\to 5}g(x)=0\).
+          Moreover,
+          \[
+            \lim_{x\to 5}\frac{f(x)}{g(x)}
+            =\lim_{x\to 5}\frac{3(x-5)}{x-5}
+            =\lim_{x\to 5}3
+            =3.
+          \]
+          Many other pairs are possible, e.g. \(f(x)=3(x-5)h(x)\), \(g(x)=(x-5)h(x)\) for any \(h\) continuous and nonzero at \(x=5\).
+        </p>
+      </details>
+    </li>
 
-<p>
-First, the argument of the inner logarithm must be positive:
-</p>
+    <!-- Indeterminate-2 -->
+    <li id="module3-indeterminate-2">
+      <a class="q-label" href="#module3-indeterminate-2">Module 3 — Indeterminate — 2</a><br>
+      Find two functions \(f(x)\) and \(g(x)\) that satisfy \(\lim\limits_{x\to 5}f(x)=\lim\limits_{x\to 5}g(x)=0\) and \(\displaystyle \lim\limits_{x\to 5}\frac{f(x)}{g(x)}=0\).
+      <details class="answer"><summary>Answer</summary>
+        <p>One choice: \(f(x)=3(x-5)^2\), \(g(x)=x-5\).</p>
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          With \(f(x)=3(x-5)^2\) and \(g(x)=x-5\), both limits to \(0\) at \(x=5\). Then
+          \[
+            \lim_{x\to 5}\frac{f(x)}{g(x)}=\lim_{x\to 5}\frac{3(x-5)^2}{x-5}
+            =\lim_{x\to 5}3(x-5)=0.
+          \]
+          Intuitively, the numerator vanishes “faster” (quadratically) than the denominator (linearly).
+        </p>
+      </details>
+    </li>
 
-$$
-x^2 - 4 > 0
-$$
+   <!-- Indeterminate-3 -->
+<li id="module3-indeterminate-3">
+  <a class="q-label" href="#module3-indeterminate-3">Module 3 — Indeterminate — 3</a><br>
+  \(\displaystyle \lim\limits_{h\to 0} \frac{(2+h)^2-4}{2h}\)
+  <details class="answer"><summary>Answer</summary>
+    <p>\(2\).</p>
+  </details>
+  <details class="solution"><summary>Full Solution</summary>
+    <p>
+      First expand the numerator:
+      \[
+        (2+h)^2-4 = 4+4h+h^2-4 = 4h+h^2.
+      \]
+      Hence
+      \[
+        \lim_{h\to 0}\frac{(2+h)^2-4}{2h}
+        \;=\;
+        \lim_{h\to 0}\frac{4h+h^2}{2h}.
+      \]
+      For \(h\neq 0\), factor and cancel \(h\):
+      \[
+        \frac{4h+h^2}{2h}
+        = \frac{h(4+h)}{2h}
+        = \frac{4+h}{2}.
+      \]
+      Therefore, by limit laws,
+      \[
+        \lim_{h\to 0}\frac{(2+h)^2-4}{2h}
+        = \lim_{h\to 0}\frac{4+h}{2}
+        = \frac{1}{2}\,\lim_{h\to 0}(4+h)
+        = \frac{1}{2}\,(4+0)
+        = 2.
+      \]
+    </p>
+  </details>
+</li>
 
-<p>Factor:</p>
 
-$$
-(x - 2)(x + 2) > 0
-$$
+    <!-- Indeterminate-4 -->
+    <li id="module3-indeterminate-4">
+      <a class="q-label" href="#module3-indeterminate-4">Module 3 — Indeterminate — 4</a><br>
+      \(\displaystyle \lim\limits_{x\to -1} \frac{\sqrt{x^2+8}-3}{x+1}\)
+      <details class="answer"><summary>Answer</summary>
+        <p>\(-\dfrac{1}{3}\).</p>
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          Direct substitution gives \(\dfrac{0}{0}\), an indeterminate form. Multiply by the conjugate:
+          \[
+            \frac{\sqrt{x^2+8}-3}{x+1}\cdot
+            \frac{\sqrt{x^2+8}+3}{\sqrt{x^2+8}+3}
+            =
+            \frac{x^2+8-9}{(x+1)\bigl(\sqrt{x^2+8}+3\bigr)}
+            =
+            \frac{x^2-1}{(x+1)\bigl(\sqrt{x^2+8}+3\bigr)}.
+          \]
+          Factor the numerator:
+          \[
+            \frac{(x-1)(x+1)}{(x+1)\bigl(\sqrt{x^2+8}+3\bigr)}
+            =\frac{x-1}{\sqrt{x^2+8}+3}\quad(x\neq -1).
+          \]
+          Now take the limit:
+          \[
+            \lim_{x\to -1}\frac{x-1}{\sqrt{x^2+8}+3}
+            =
+            \frac{-2}{\sqrt{1+8}+3}
+            =\frac{-2}{3+3}
+            =-\frac{1}{3}.
+          \]
+        </p>
+      </details>
+    </li>
 
-<div class="img-center">
-  <img src="../Picture/pic2.png" style="max-width:70%;">
-</div>
+    <!-- Indeterminate-5 -->
+    <li id="module3-indeterminate-5">
+      <a class="q-label" href="#module3-indeterminate-5">Module 3 — Indeterminate — 5</a><br>
+      \(\displaystyle \lim\limits_{t\to 1} \frac{3t-3}{2-\sqrt{5-t}}\)
+      <details class="answer"><summary>Answer</summary>
+        <p>\(12\).</p>
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          Substitution gives \(\frac{0}{0}\). Multiply by the conjugate of the denominator:
+          \[
+            \frac{3(t-1)}{2-\sqrt{5-t}}\cdot
+            \frac{2+\sqrt{5-t}}{2+\sqrt{5-t}}
+            =
+            \frac{3(t-1)\bigl(2+\sqrt{5-t}\bigr)}{4-(5-t)}
+            =
+            \frac{3(t-1)\bigl(2+\sqrt{5-t}\bigr)}{t-1}.
+          \]
+          For \(t\neq 1\) the factor \(t-1\) cancels, so
+          \[
+            \lim_{t\to 1}\frac{3t-3}{2-\sqrt{5-t}}
+            =
+            3\bigl(2+\sqrt{4}\bigr)=3(2+2)=12.
+          \]
+        </p>
+      </details>
+    </li>
 
-<p>
-This inequality holds when
-</p>
+    <!-- Indeterminate-6 -->
+<li id="module3-indeterminate-6">
+  <a class="q-label" href="#module3-indeterminate-6">Module 3 — Indeterminate — 6</a><br>
+  \(\displaystyle \lim\limits_{t\to \frac{1}{2}} \frac{\frac{1}{3t^2}+\frac{1}{t^2-1}}{2t-1}\)
+  <details class="answer"><summary>Answer</summary>
+    <p>\(-\dfrac{32}{9}\).</p>
+  </details>
+  <details class="solution"><summary>Full Solution</summary>
+    <p>
+      Begin with the given expression:
+      \[
+        \lim_{t\to \frac{1}{2}}
+        \frac{\frac{1}{3t^2}+\frac{1}{t^2-1}}{2t-1}.
+      \]
+      Combine the fractions in the numerator using a common denominator:
+      \[
+        \lim_{t\to \frac{1}{2}}
+        \frac{\frac{(t^2-1)+3t^2}{3t^2(t^2-1)}}{2t-1}
+        =
+        \lim_{t\to \frac{1}{2}}
+        \frac{4t^2-1}{3t^2(t^2-1)(2t-1)}.
+      \]
+      Factor \(4t^2-1=(2t-1)(2t+1)\):
+      \[
+        \lim_{t\to \frac{1}{2}}
+        \frac{(2t-1)(2t+1)}{3t^2(t^2-1)(2t-1)}.
+      \]
+      For \(t\neq \frac{1}{2}\), cancel the factor \(2t-1\):
+      \[
+        \lim_{t\to \frac{1}{2}}
+        \frac{2t+1}{3t^2(t^2-1)}.
+      \]
+      Now substitute \(t=\frac{1}{2}\):
+      \[
+        \lim_{t\to \frac{1}{2}}
+        \frac{2t+1}{3t^2(t^2-1)}
+        =
+        \frac{2(\tfrac{1}{2})+1}{3(\tfrac{1}{2})^2\bigl((\tfrac{1}{2})^2-1\bigr)}
+        =
+        \frac{2}{\frac{3}{4}\cdot(-\frac{3}{4})}
+        =\frac{2}{-\frac{9}{16}}
+        =-\frac{32}{9}.
+      \]
+      Therefore,
+      \[
+        \boxed{\displaystyle \lim_{t\to \frac{1}{2}}
+        \frac{\frac{1}{3t^2}+\frac{1}{t^2-1}}{2t-1}
+        = -\frac{32}{9}.}
+      \]
+    </p>
+  </details>
+</li>
 
-$$
-x < -2 \quad \text{or} \quad x > 2
-$$
 
-<p>
-Next, the argument of the outer logarithm must also be positive:
-</p>
+   <!-- Indeterminate-7 -->
+<li id="module3-indeterminate-7">
+  <a class="q-label" href="#module3-indeterminate-7">Module 3 — Indeterminate — 7</a><br>
+  Find all values of \(c\) such that the following function is continuous at \(x=c\)
+  \[
+    f(x)= \begin{cases}
+      8-cx, & \text{$x \leq c$},\\[4pt]
+      x^2, & \text{$x > c$}.
+    \end{cases}
+  \]
+  <details class="answer"><summary>Answer</summary>
+    <p>\(c=\pm 2.\)</p>
+  </details>
 
-$$
-\ln(x^2 - 4) > 0
-$$
+  <details class="solution"><summary>Full Solution</summary>
+    <p>
+      To determine the value(s) of \(c\) for which \(f(x)\) is continuous at \(x=c\),
+      we must satisfy the continuity condition:
+      \[
+        \lim_{x\to c^-} f(x) = \lim_{x\to c^+} f(x) = f(c).
+      \]
+    </p>
 
-<p>
-Exponentiate both sides:
-</p>
+    <p>
+      Compute each component:
+      <br><strong>(1) Left-hand limit</strong> (\(x\to c^-\)):
+      \[
+        \lim_{x\to c^-} f(x)
+        = \lim_{x\to c^-} (8-cx)
+        = 8 - c\cdot c
+        = 8 - c^2.
+      \]
+      <strong>(2) Right-hand limit</strong> (\(x\to c^+\)):
+      \[
+        \lim_{x\to c^+} f(x)
+        = \lim_{x\to c^+} x^2
+        = c^2.
+      \]
+      <strong>(3) Function value at \(x=c\)</strong> (from the top branch, since \(x=c\) satisfies \(x\le c\)):
+      \[
+        f(c) = 8 - c\cdot c = 8 - c^2.
+      \]
+    </p>
 
-$$
-e^{\ln(x^2 - 4)} > e^0
-\quad\Rightarrow\quad
-x^2 - 4 > 1
-$$
+    <p>
+      For continuity at \(x=c\), we require
+      \[
+        \lim_{x\to c^-} f(x) = \lim_{x\to c^+} f(x),
+      \]
+      which gives
+      \[
+        8 - c^2 = c^2.
+      \]
+      Simplify:
+      \[
+        8 = 2c^2 \quad\Longrightarrow\quad c^2 = 4 \quad\Longrightarrow\quad c = \pm 2.
+      \]
+    </p>
 
-<p>Simplify:</p>
+    <p>
+      At these values,
+      \[
+        f(c) = 8 - c^2 = c^2,
+      \]
+      confirming that \(f(x)\) is continuous at \(x = -2\) and \(x = 2.\)
+    </p>
+  </details>
 
-$$
-x^2 > 5
-\quad\Rightarrow\quad
-x < -\sqrt{5} \quad \text{or} \quad x > \sqrt{5}
-$$
-
-<div class="img-center">
-  <img src="../Picture/pic3.png" style="max-width:70%;">
-</div>
-
-<p>
-Now take the intersection of
-\(
-x < -2 \text{ or } x > 2
-\)
-and
-\(
-x < -\sqrt{5} \text{ or } x > \sqrt{5}
-\).
-</p>
-
-<div class="img-center">
-  <img src="../Picture/pic4.jpg" style="max-width:70%;">
-</div>
-
-<p>
-Therefore, the domain is:
-</p>
-
-$$
-(-\infty, -\sqrt{5}) \;\cup\; (\sqrt{5}, \infty)
-$$
-</details>
-
-  </li>
-
-  <!-- Intermediate-2 -->
-  <li id="module1-intermediate-2">
-    <a class="q-label" href="#module1-intermediate-2">Module 1 — Intermediate — 2</a><br>
-    Determine the domain of \(f(x)=\sqrt{154-x^2}\) and express it in interval notation.
-    <details class="answer"><summary>Answer</summary>
-      <p>Domain: $\left[-\sqrt{154},\sqrt{154}\:\right]$<p>
-    </details>
-    <details class="solution"><summary>Full Solution</summary>
-<p>
-To determine the domain of 
-\(
-f(x)=\sqrt{154-x^2},
-\)
-the radicand must be nonnegative:
-</p>
-
-$$
-154 - x^2 \ge 0.
-\implies
-x^2 \le 154
-\implies
--\sqrt{154} \le x \le \sqrt{154}.
-$$
-
-<p>
-Therefore, the domain is
-</p>
-
-$$
-\left[-\sqrt{154},\,\sqrt{154}\right].
-$$
-</details>
-
-  </li>
-
-  <!-- Intermediate-3 -->
-  <li id="module1-intermediate-3">
-    <a class="q-label" href="#module1-intermediate-3">Module 1 — Intermediate — 3</a><br>
-    Solve \(\displaystyle \frac{A}{1+Be^{t/2}}=C\) for \(t\), where \(B,C\ne0\).
-    <details class="answer"><summary>Answer</summary>
-      <p>$t = 2 \cdot {\ln\left(\frac{A-C}{BC} \right)}$<p>
-    </details>
-    <details class="solution"><summary>Full Solution</summary>
-<p>
-We solve the equation
-\[
-\frac{A}{1+Be^{t/2}}=C
-\]
-for \(t\), assuming \(B\ne0\) and \(C\ne0\).
-</p>
-
-<p>
-Multiply both sides by \(1+Be^{t/2}\):
-\[
-A = C\bigl(1+Be^{t/2}\bigr).
-\]
-Thus
-\[
-A = C + CBe^{t/2}.
-\]
-Rearranging gives
-\[
-A - C = CBe^{t/2}.
-\]
-Hence
-\[
-e^{t/2} = \frac{A-C}{CB}.
-\]
-</p>
-
-<p>
-Taking the natural logarithm yields
-\[
-\frac{t}{2} = \ln\!\left(\frac{A-C}{CB}\right).
-\]
-Therefore,
-\[
-t = 2 \ln\!\left(\frac{A-C}{CB}\right).
-\]
-</p>
-    </details>
-<details class="video">
-    <summary>Video solution</summary>
+  <details class="video">
+    <summary>Video Solution</summary>
     <p>
       The video solution is available
-      <a href="https://drive.google.com/file/d/1cIgY4dwPNISLSGqALm_gbjkCxWbnolew/view"
+      <a href="https://drive.google.com/file/d/1jBQGgQRQN4XP3_ZFA_rrDWxkoEwfdEj6/view?usp=drive_link"
          target="_blank" rel="noopener">
         here
       </a>.
     </p>
   </details>
-  </li>
-
-  <!-- Intermediate-4 -->
-  <li id="module1-intermediate-4">
-    <a class="q-label" href="#module1-intermediate-4">Module 1 — Intermediate — 4</a><br>
-    Solve \(2\ln(\sqrt{x}) - \ln(1-x) = 2\).
-    <details class="answer"><summary>Answer</summary>
-      <p>$x = \frac{e^2}{1+e^2}$ <p>
-    </details>
-<details class="solution"><summary>Full Solution</summary>
-
-<p><strong>Domain.</strong>  
-The expression \(\ln(\sqrt{x})\) requires \(\sqrt{x}>0\), hence \(x>0\).  
-The expression \(\ln(1-x)\) requires \(1-x>0\), hence \(x<1\).  
-Thus, the equation is defined only for
-\[
-0 < x < 1.
-\]
-</p>
-
-<p>
-Using \(\sqrt{x} = x^{1/2}\) and the logarithm laws,
-\[
-2\ln(\sqrt{x}) - \ln(1-x) = 2
-\quad\Longrightarrow\quad
-2\cdot \tfrac12 \ln x - \ln(1-x) = 2
-\quad\Longrightarrow\quad
-\ln\!\left(\frac{x}{1-x}\right)=2.
-\]
-</p>
-
-<p>
-Exponentiating both sides,
-\[
-\frac{x}{1-x} = e^{2}
-\quad\Longrightarrow\quad
-x = e^{2}(1-x)
-\quad\Longrightarrow\quad
-x(1+e^{2}) = e^{2}
-\quad\Longrightarrow\quad
-x = \frac{e^{2}}{1+e^{2}}.
-\]
-</p>
-
-<p>
-Finally, since \(\dfrac{e^{2}}{1+e^{2}} \in (0,1)\), it satisfies the domain.
-</p>
-
-</details>
-
-
-  </li>
-
-  <!-- Intermediate-5 -->
-  <li id="module1-intermediate-5">
-    <a class="q-label" href="#module1-intermediate-5">Module 1 — Intermediate — 5</a><br>
-    Find the domain of the function \(h(x)=(f\circ g)(x)\), where  
-    \[
-      f(x)=\sqrt{x},\qquad g(x)=\sin(x),\quad x\in[0,2\pi].
-    \]
-    <details class="answer"><summary>Answer</summary>
-      <p>Domain: $[0, \pi] \cup [2\pi]$<p>
-    </details>
-<details class="solution"><summary>Full Solution</summary>
-
-<p>
-We are given
-\[
-f(x)=\sqrt{x}, 
-\qquad
-g(x)=\sin(x), \quad x\in[0,2\pi],
-\]
-and we consider the composition \(h(x)=(f\circ g)(x)=\sqrt{\sin(x)}.\)
-</p>
-
-<p>
-The expression \(\sqrt{\sin(x)}\) is defined precisely when \(\sin(x)\ge0\).  
-Over the interval \([0,2\pi]\), the sine function is non-negative on
-\[
-[0,\pi].
-\]
-<p>
-  <div class="img-center">
-  <img src="../Picture/pic5.png" style="max-width:70%;">
-</div>
-<p>
-Thus, \(h(x)\) is defined exactly for
-\[
-x\in[0,\pi].
-\]
-</p>
-<p>
-Therefore, the domain of \(h(x)\) is
-\[
-[0,\pi].
-\]
-</p>
-
-</details>
-
-  </li>
-
-  <!-- Intermediate-6 -->
-  <li id="module1-intermediate-6">
-    <a class="q-label" href="#module1-intermediate-6">Module 1 — Intermediate — 6</a><br>
-    Solve the equation:
-    \[
-    (\sqrt[3]{2})^x = 8^{10-x}.
-    \]
-    <details class="answer"><summary>Answer</summary>
-      <p>$x=9.$<p>
-    </details>
-<details class="solution"><summary>Full Solution</summary>
-
-<p>
-We solve
-\[
-\bigl(\sqrt[3]{2}\bigr)^x = 8^{\,10-x}.
-\]
-Rewrite both sides in base \(2\):
-\[
-\left(2^{1/3}\right)^x = \left(2^3\right)^{10-x}
-\;\Longrightarrow\;
-2^{x/3} = 2^{\,30-3x}.
-\]
-Taking logarithms of both sides,
-\[
-\ln\!\left(2^{x/3}\right) = \ln\!\left(2^{30-3x}\right).
-\]
-Using \(\ln(a^b) = b\ln(a)\),
-\[
-\frac{x}{3}\ln 2 = (30-3x)\ln 2.
-\]
-Since \(\ln 2 \neq 0\),
-\[
-\frac{x}{3} = 30 - 3x
-\;\Longrightarrow\;
-x = 90 - 9x
-\;\Longrightarrow\;
-10x = 90
-\;\Longrightarrow\;
-x = 9.
-\]
-</p>
-</details>
 </li>
-</ol>
-<!-- =============================== -->
-<!-- Module 1 — Challenging (⋆⋆⋆)   -->
+
+
+<!-- Indeterminate-8 -->
+<li id="module3-indeterminate-8">
+  <a class="q-label" href="#module3-indeterminate-8">Module 3 — Indeterminate — 8</a><br>
+  Show that equation \(x^3 = 20 + \sqrt{x}\) has a solution.
+  <details class="answer"><summary>Answer</summary>
+    <p>There is at least one solution in \((2,3)\) by the Intermediate Value Theorem.</p>
+  </details>
+
+  <details class="solution"><summary>Full Solution</summary>
+    <p>
+      Consider the function
+      \[
+        F(x) = x^3 - 20 - \sqrt{x}, \quad x \ge 0.
+      \]
+      Since both \(x^3\) and \(\sqrt{x}\) are continuous on \([0,\infty)\), their difference \(F(x)\)
+      is also continuous on this interval.
+    </p>
+
+    <p>
+      Evaluate \(F(x)\) at two convenient points:
+      \[
+        F(2) = 2^3 - 20 - \sqrt{2} = 8 - 20 - \sqrt{2} < 0,
+        \qquad
+        F(3) = 3^3 - 20 - \sqrt{3} = 27 - 20 - \sqrt{3} > 0.
+      \]
+      Thus \(F(2) < 0 < F(3)\).
+    </p>
+
+    <p>
+      By the <em>Intermediate Value Theorem</em>, since \(F(x)\) is continuous on \([2,3]\)
+      and changes sign between \(x = 2\) and \(x = 3\),
+      there must exist at least one number \(c \in (2,3)\) such that \(F(c) = 0\).
+    </p>
+
+    <p>
+      Therefore, the equation
+      \[
+        x^3 = 20 + \sqrt{x}
+      \]
+      has at least one real solution with \(x \in (2,3)\).
+    </p>
+  </details>
+</li>
+
+
+
+   <!-- Indeterminate-9 -->
+<li id="module3-indeterminate-9">
+  <a class="q-label" href="#module3-indeterminate-9">Module 3 — Indeterminate — 9</a><br>
+  Show that equation \(x^2 - 4x^3 + 1 = x - 7\) has a solution.
+  <details class="answer"><summary>Answer</summary>
+    <p>There is at least one solution in \((1,2)\) by the Intermediate Value Theorem.</p>
+  </details>
+
+  <details class="solution"><summary>Full Solution</summary>
+    <p>
+      Rewrite the given equation in the form \(G(x) = 0\), where
+      \[
+        G(x) = x^2 - 4x^3 + 1 - (x - 7)
+        = -4x^3 + x^2 - x + 8.
+      \]
+      The function \(G(x)\) is a polynomial, so it is continuous for all real numbers.
+    </p>
+
+    <p>
+      Evaluate \(G(x)\) at two convenient points:
+      \[
+        G(1) = -4(1)^3 + (1)^2 - 1 + 8 = -4 + 1 - 1 + 8 = 4 > 0,
+      \]
+      \[
+        G(2) = -4(2)^3 + (2)^2 - 2 + 8 = -32 + 4 - 2 + 8 = -22 < 0.
+      \]
+      Since \(G(1) > 0\) and \(G(2) < 0\), \(G(x)\) changes sign on the interval \([1,2]\).
+    </p>
+
+    <p>
+      By the <em>Intermediate Value Theorem</em>, because \(G(x)\) is continuous on \([1,2]\)
+      and takes opposite signs at the endpoints, there exists a number \(c \in (1,2)\)
+      such that \(G(c) = 0\).
+    </p>
+
+    <p>
+      Therefore, the equation
+      \[
+        x^2 - 4x^3 + 1 = x - 7
+      \]
+      has at least one real solution in the interval \((1,2)\).
+    </p>
+  </details>
+</li>
+
+
+    <!-- Indeterminate-10 -->
+    <li id="module3-indeterminate-10">
+      <a class="q-label" href="#module3-indeterminate-10">Module 3 — Indeterminate — 10</a><br>
+      Suppose the demand function for a certain product is given by \(D(p) = 1000 - 50p\), where \(D\) is the quantity demanded and \(p\) is the price per unit. The price per unit, \(p\), cannot be less than zero.
+      <ol type="a">
+        <li>Find the limit of the demand function as the price per unit (p) approaches zero.</li>
+        <li>Explain the economic significance of this limit in the context of the demand function.</li>
+      </ol>
+      <details class="answer"><summary>Answer</summary>
+        <p>(a) \(1000\). &nbsp; (b) At a zero price, the model predicts maximum demand of \(1000\) units.</p>
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          (a) Compute:
+          \[
+            \lim_{p\to 0}D(p)=\lim_{p\to 0}(1000-50p)=1000.
+          \]
+          (b) Interpretation: as price falls to \$0, consumers demand \(1000\) units according to this linear model; that is, \(1000\) represents the intercept (maximum feasible demand) when price is free.
+        </p>
+      </details>
+    </li>
+
+    <!-- Indeterminate-11 -->
+    <li id="module3-indeterminate-11">
+      <a class="q-label" href="#module3-indeterminate-11">Module 3 — Indeterminate — 11</a><br>
+      A classmate from your Math 154 course attempted this problem. Identify if they’ve solved it correctly. If you find any errors, point out the step where the mistake occurred and provide the correct solution.
+      <p><strong>Problem:</strong> Determine if there exists a root of the equation \(f(x) = \dfrac{1}{x-2}\) in the interval \([1,3]\) using the Intermediate Value Theorem.</p>
+      <p><strong>Student's Solution:</strong><br/>
+        Step 1: \(f(x) = \dfrac{1}{x-2}\) is continuous on \([1,3]\).<br/>
+        Step 2: \(f(1) = -1\), \(f(3) = 1\).<br/>
+        Step 3: \(f(1) < 0\) and \(f(3) > 0\).<br/>
+        Step 4: Conclude that, by the Intermediate Value Theorem, there exists a root in \([1,3]\).
+      </p>
+      <details class="answer"><summary>Answer</summary>
+        <p>Incorrect: \(f\) is <em>not</em> continuous on \([1,3]\) (there is a discontinuity at \(x=2\)). IVT does not apply; moreover, \(f(x)\neq 0\) for all \(x\), so there is no root.</p>
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          The claim in Step&nbsp;1 is false. The function \(f(x)=\dfrac{1}{x-2}\) has a vertical asymptote at \(x=2\) and is not defined there, so it is not continuous on the closed interval \([1,3]\).
+          Since continuity on the entire interval is a hypothesis of the Intermediate Value Theorem, IVT cannot be used to assert a root.
+        </p>
+        <p>
+          In fact, \(f(x)=0\) has no solution because \(\frac{1}{x-2}=0\) is impossible (the numerator is \(1\)). Thus there is no root in \([1,3]\) (or anywhere).
+        </p>
+      </details>
+    </li>
+
+<!-- Indeterminate-12 -->
+<li id="module3-indeterminate-12">
+  <a class="q-label" href="#module3-indeterminate-12">Module 3 — Indeterminate — 12</a><br>
+
+  Consider the graphs of the two functions \(f\) and \(g\) shown below.
+
+  <div class="img-center">
+    <img src="../Picture/pic8.png"
+         alt="Graphs of f and g"
+         style="max-width:70%;">
+  </div>
+
+  <p>Using the graph, evaluate the following limits or state that they do not exist.</p>
+
+  <ol type="a">
+    <li>\(\displaystyle \lim_{x\to 0} f(x)\)</li>
+    <li>\(\displaystyle \lim_{x\to 2^-} g(x)\)</li>
+    <li>\(\displaystyle \lim_{x\to 2^+} g(x)\)</li>
+    <li>\(\displaystyle \lim_{x\to 2} g(x)\)</li>
+    <li>\(\displaystyle \lim_{x\to 2^+} f(g(x))\)</li>
+  </ol>
+
+  <details class="answer"><summary>Answer</summary>
+    <p>
+      (a) \(0\) &nbsp;&nbsp;
+      (b) \(0\) &nbsp;&nbsp;
+      (c) \(1\) &nbsp;&nbsp;
+      (d) DNE &nbsp;&nbsp;
+      (e) \(3\)
+    </p>
+  </details>
+
+  <details class="solution"><summary>Full Solution</summary>
+    <p>
+      (a) Near \(x=0\), the graph of \(f\) follows the orange parabola, which
+      approaches height \(0\) from both sides, even though there is a filled
+      dot at \((0,10)\). The limit depends on the nearby values, not the value
+      at the point, so
+      \[
+        \lim_{x\to 0} f(x)=0.
+      \]
+    </p>
+
+    <p>
+      (b) As \(x\to 2^-\), the blue graph of \(g\) approaches the open circle
+      at height \(0\). Thus
+      \[
+        \lim_{x\to 2^-} g(x)=0.
+      \]
+    </p>
+
+    <p>
+      (c) As \(x\to 2^+\), the blue graph becomes a horizontal line at height
+      \(1\). Therefore
+      \[
+        \lim_{x\to 2^+} g(x)=1.
+      \]
+    </p>
+
+    <p>
+      (d) The one-sided limits do not agree:
+      \[
+        \lim_{x\to 2^-} g(x)=0,\qquad
+        \lim_{x\to 2^+} g(x)=1.
+      \]
+      Since these are different, the two-sided limit does not exist:
+      \[
+        \lim_{x\to 2} g(x) = \text{DNE}.
+      \]
+    </p>
+
+    <p>
+      (e) For the composition, first note that from part (c),
+      \[
+        \lim_{x\to 2^+} g(x)=1.
+      \]
+      From the graph, \(f\) is continuous at \(x=1\) (the orange curve has no
+      holes or jumps there, and \(f(1)=3\)). Because \(f\) is continuous at
+      \(1\), we may use the limit-of-a-composition rule:
+      \[
+        \lim_{x\to 2^+} f(g(x))
+        = f\!\left(\lim_{x\to 2^+} g(x)\right)
+        = f(1)
+        = 3.
+      \]
+    </p>
+  </details>
+</li>
+
+
+
+  </ol>
+</section>
+
+
+   <!-- =============================== -->
+<!-- 3.4 Challenging                 -->
 <!-- =============================== -->
 <section id="Challenging">
   <h2>Challenging <span class="badge">★★★</span></h2>
-
   <ol class="q-list">
 
     <!-- Challenging-1 -->
-    <li id="module1-challenging-1">
-      <a class="q-label" href="#module1-challenging-1">Module 1 — Challenging — 1</a><br>
-      Let
-      \[
-        f(x)=\frac{1}{x-2},\qquad
-        g(x)=\sqrt{3x-1},\qquad
-        h(x)=\ln(x+1).
-      \]
-      Find the composition \((f\circ g\circ h)(x)\) and determine its domain.
-
-<details class="answer"><summary>Answer</summary>
-  <p>
-    \[
-      (f \circ g \circ h)(x)
-      = \frac{1}{\sqrt{\,3\ln(x+1) - 1\,} - 2}
-    \]
-  </p>
-
-  <p>
-    Domain:
-    \[
-      \bigl(\sqrt[3]{e} - 1,\; e^{5/3} - 1\bigr) 
-      \;\cup\; 
-      \bigl(e^{5/3} - 1,\; \infty\bigr)
-    \]
-  </p>
-</details>
-
-
-<details class="solution"><summary>Full Solution</summary>
-
-<p>
-We first compute the composition \( (f \circ g \circ h)(x) \).
-Since
-\( h(x)=\ln(x+1) \),
-\( g(x)=\sqrt{3x-1} \),
-and
-\( f(x)=\dfrac{1}{x-2} \),
-we have
-</p>
-
-<p>
-\[
-(f \circ g \circ h)(x)
-= f\!\bigl(g(h(x))\bigr)
-= f\!\left( \sqrt{\,3\ln(x+1)-1\,} \right)
-= \frac{1}{\sqrt{\,3\ln(x+1)-1\,}-2}.
-\]
-</p>
-
-<p>
-To determine the domain, each component must be defined.
-</p>
-
-<p>
-First, since \(h(x)=\ln(x+1)\), we must have
-\[
-x+1>0 \quad\Rightarrow\quad x>-1.
-\]
-</p>
-
-<p>
-Next, the argument of \(g\bigl(h(x)\bigr)\) must be nonnegative:
-\[
-3\ln(x+1)-1 \ge 0
-\quad\Rightarrow\quad
-\ln(x+1) \ge \tfrac13
-\quad\Rightarrow\quad
-x \ge e^{1/3}-1.
-\]
-</p>
-
-<p>
-Finally, \(f(x)=\dfrac{1}{x-2}\) is undefined when its denominator is zero; thus
-\[
-\sqrt{\,3\ln(x+1)-1\,} \ne 2
-\quad\Rightarrow\quad
-3\ln(x+1)-1 \ne 4
-\quad\Rightarrow\quad
-x \ne e^{5/3}-1.
-\]
-</p>
-
-<p>
-Combining these conditions, we require
-\[
-x > e^{1/3}-1, \qquad x \ne e^{5/3}-1.
-\]
-</p>
-
-<p>
-Therefore, the domain is
-\[
-\boxed{
-\bigl(e^{1/3}-1,\;e^{5/3}-1\bigr)
-\;\cup\;
-\bigl(e^{5/3}-1,\;\infty\bigr)
-}.
-\]
-</p>
-</details>
-<details class="video">
-    <summary>Video solution</summary>
-    <p>
-      The video solution is available
-      <a href="https://drive.google.com/file/d/1k2_N9yzaV5hPso9ZkFpE8Ggq7EKgqEL4/view?usp=drive_link"
-         target="_blank" rel="noopener">
-        here
-      </a>.
-    </p>
-  </details>
-
+    <li id="module3-challenging-1">
+      <a class="q-label" href="#module3-challenging-1">Module 3 — Challenging — 1</a><br>
+      \(\displaystyle \lim_{x\to 0}\left(10+\frac{|x|}{x}\right)\)
+      <details class="answer"><summary>Answer</summary>
+        <p>Does not exist (DNE).</p>
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          Recall that
+          \[
+            |x| =
+            \begin{cases}
+              x, & x>0,\\
+              -x, & x<0.
+            \end{cases}
+          \]
+          For \(x>0\),
+          \[
+            \frac{|x|}{x} = \frac{x}{x} = 1
+            \quad\Longrightarrow\quad
+            \lim_{x\to 0^+}\!\left(10+\frac{|x|}{x}\right) = 10 + 1 = 11.
+          \]
+          For \(x<0\),
+          \[
+            \frac{|x|}{x} = \frac{-x}{x} = -1
+            \quad\Longrightarrow\quad
+            \lim_{x\to 0^-}\!\left(10+\frac{|x|}{x}\right) = 10 - 1 = 9.
+          \]
+          Since the left and right limits are not equal (\(9 \neq 11\)),
+          the two-sided limit does not exist:
+          \[
+            \boxed{\displaystyle \lim_{x\to 0}\left(10+\frac{|x|}{x}\right)\text{ DNE.}}
+          \]
+        </p>
+      </details>
     </li>
 
     <!-- Challenging-2 -->
-    <li id="module1-challenging-2">
-      <a class="q-label" href="#module1-challenging-2">Module 1 — Challenging — 2</a><br>
+    <li id="module3-challenging-2">
+      <a class="q-label" href="#module3-challenging-2">Module 3 — Challenging — 2</a><br>
+      \(\displaystyle \lim_{x\to\infty}\frac{\sqrt{3x^8+7x^4}+10}{x^4-2x^2+1}\)
+      <details class="answer"><summary>Answer</summary>
+        <p>\(\sqrt{3}\).</p>
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          Divide numerator and denominator by \(x^4\), the highest power in the denominator:
+          \[
+            \lim_{x\to\infty}\frac{\sqrt{3x^8+7x^4}+10}{x^4-2x^2+1}
+            =\lim_{x\to\infty}\frac{x^4\left(\sqrt{3+\tfrac{7}{x^4}}+\tfrac{10}{x^4}\right)}{x^4(1-\tfrac{2}{x^2}+\tfrac{1}{x^4})}.
+          \]
+          Simplify:
+          \[
+            \lim_{x\to\infty}\frac{\sqrt{3+\tfrac{7}{x^4}}+\tfrac{10}{x^4}}{1-\tfrac{2}{x^2}+\tfrac{1}{x^4}}
+            = \frac{\sqrt{3}}{1} = \sqrt{3}.
+          \]
+        </p>
+      </details>
+    </li>
 
-      A student attempted to solve the following equation:
+    <!-- Challenging-3 -->
+    <li id="module3-challenging-3">
+      <a class="q-label" href="#module3-challenging-3">Module 3 — Challenging — 3</a><br>
+      \(\displaystyle \lim_{x\to\infty}\!\left(\sqrt{x^2+x}-x\right)\)
+      <details class="answer"><summary>Answer</summary>
+        <p>\(\tfrac{1}{2}\).</p>
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          Multiply by the conjugate:
+          \[
+            \lim_{x\to\infty}\!\left(\sqrt{x^2+x}-x\right)
+            = \lim_{x\to\infty}\frac{(\sqrt{x^2+x}-x)(\sqrt{x^2+x}+x)}{\sqrt{x^2+x}+x}
+            = \lim_{x\to\infty}\frac{x^2+x-x^2}{\sqrt{x^2+x}+x}.
+          \]
+          Simplify numerator:
+          \[
+            = \lim_{x\to\infty}\frac{x}{\sqrt{x^2+x}+x}
+            = \lim_{x\to\infty}\frac{x}{x\left(\sqrt{1+\tfrac{1}{x}}+1\right)}
+            = \lim_{x\to\infty}\frac{1}{\sqrt{1+\tfrac{1}{x}}+1} = \frac{1}{2}.
+          \]
+        </p>
+      </details>
+    </li>
+
+    <!-- Challenging-4 -->
+    <li id="module3-challenging-4">
+      <a class="q-label" href="#module3-challenging-4">Module 3 — Challenging — 4</a><br>
+      Find all values of \(c\) such that the following function is continuous at \(x=c\)
       \[
-      \ln(x) + \ln(x+4) = 1.
+        f(x)=
+        \begin{cases}
+          e^{cx}-e^x, & x\le c,\\[4pt]
+          xe^x - ce^c, & x>c.
+        \end{cases}
       \]
-
-      Their work is shown below.  
-      Identify whether the solution is correct.  
-      If incorrect, identify the error and provide the correct solution.
-
-      <p><strong>Student’s work:</strong></p>
-
-      <p>
-        Step 1: \(\ln(x(x+4)) = 1\)<br>
-        Step 2: \(e^{\ln(x(x+4))} = e^1\)<br>
-        Step 3: \(x(x+4) = e\)<br>
-        Step 4: \(x^2 + 4x - e = 0\)<br>
-        Step 5: By quadratic formula,  
-        \[
-        x = \frac{-4 \pm \sqrt{16 + 4e}}{2}
-        \]
-      </p>
-<details class="answer"><summary>Answer</summary>
-<p>
-The quadratic equation obtained from the logarithmic identity is correct, but both solutions were chosen without checking the domain. Since \(\ln x\) and \(\ln(x+4)\) require \(x>0\), only
-\[
-x=-2+\sqrt{\,4+e\,}
-\]
-satisfies the domain.
-</p>
+      <details class="answer"><summary>Answer</summary>
+        <p>\(c=0,1.\)</p>
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+  <p>
+    For continuity at \(x=c\), we require
+    \[
+      \lim_{x\to c^-} f(x) \;=\; \lim_{x\to c^+} f(x) \;=\; f(c).
+    \]
+    From the definition,
+    \[
+      \lim_{x\to c^-} f(x) = e^{c\cdot c} - e^c = e^{c^2} - e^c,
+      \qquad
+      \lim_{x\to c^+} f(x) = \lim_{x\to c^+} (x e^x - c e^c) = c e^c - c e^c = 0.
+    \]
+    Since the value at \(x=c\) comes from the first branch, we have
+    \[
+      f(c) = e^{c^2} - e^c.
+    \]
+    Continuity thus requires
+    \[
+      \lim_{x\to c^-} f(x) = f(c) \quad\text{and}\quad \lim_{x\to c^+} f(x) = f(c),
+    \]
+    i.e.
+    \[
+      e^{c^2} - e^c = e^{c^2} - e^c \quad\text{(trivial)} \quad\text{and}\quad 0 = e^{c^2} - e^c.
+    \]
+    Hence
+    \[
+      e^{c^2} = e^c \;\Longrightarrow\; c^2 = c \;\Longrightarrow\; c\in\{0,1\}.
+    \]
+  </p>
 </details>
 
-<details class="solution"><summary>Full Solution</summary>
-<p>
-\[
-\ln x+\ln(x+4)=1
-\quad\Longrightarrow\quad
-\ln\!\bigl(x(x+4)\bigr)=1.
-\]
-Exponentiating,
-\[
-x(x+4)=e
-\quad\Longrightarrow\quad
-x^2+4x-e=0.
-\]
-Thus
-\[
-x=\frac{-4\pm\sqrt{16+4e}}{2}
-= -2\pm\sqrt{\,4+e\,}.
-\]
-The logarithmic expressions require \(x>0\), so
-\[
-x>-4\quad\text{from }x+4>0,
-\qquad
-x>0\quad\text{from }x>0.
-\]
-Hence only
-\[
-x=-2+\sqrt{\,4+e\,}
-\]
-lies in the domain.  
-The negative part should have been omitted.
-</p>
-</details>
+    </li>
 
+    <!-- Challenging-5 -->
+    <li id="module3-challenging-5">
+      <a class="q-label" href="#module3-challenging-5">Module 3 — Challenging — 5</a><br>
+      The total revenue \(R(x)=100x\), and total cost \(C(x)=500+10x.\)
+      <ol type="a">
+        <li>Find the limit of the average profit per unit as \(x\to\infty.\)</li>
+        <li>Explain its economic interpretation.</li>
+      </ol>
+      <details class="answer"><summary>Answer</summary>
+        <p>\(\displaystyle \lim_{x\to\infty}\frac{P(x)}{x}=90.\)</p>
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          The profit function is \(P(x)=R(x)-C(x)=100x-(500+10x)=90x-500.\)
+          The average profit per unit is
+          \[
+            \bar{P}(x)=\frac{P(x)}{x}=\frac{90x-500}{x}=90-\frac{500}{x}.
+          \]
+          Taking the limit:
+          \[
+            \lim_{x\to\infty}\bar{P}(x)=90.
+          \]
+          As \(x\) increases, the fixed cost per unit \(\frac{500}{x}\) becomes negligible,
+          so the average profit per unit approaches \$90 — the marginal profit per unit sold.
+        </p>
+      </details>
+    </li>
+
+<!-- Challenging-6 -->
+<li id="module3-challenging-6">
+  <a class="q-label" href="#module3-challenging-6">Module 3 — Challenging — 6</a><br>
+  Let \(f(x)=x^3-6x^2+9x-3.\) Prove that there exist at least two distinct roots of \(f(x)=0\) in \((1,4)\). Then, provide an interval for each root such that the interval width is no greater than \(1.\)
+  <details class="answer"><summary>Answer</summary>
+    <p>There exist two distinct roots: \(C_1 \in (1,2)\) and \(C_2 \in (3,4)\).</p>
+  </details>
+
+  <details class="solution"><summary>Full Solution</summary>
+    <p>
+      Since \(f\) is a polynomial, it is continuous on all of \(\mathbb{R}\).  
+      Evaluate \(f\) at several points in \((1,4)\):
+      \[
+        f(1)=1-6+9-3=1>0,\quad
+        f(2)=8-24+18-3=-1<0,
+      \]
+      \[
+        f(3)=27-54+27-3=-3<0,\quad
+        f(4)=64-96+36-3=1>0.
+      \]
+      Because \(f(1)>0\) and \(f(2)<0\), the Intermediate Value Theorem guarantees a root 
+      \(C_1 \in (1,2)\).  
+      Similarly, \(f(3)<0\) and \(f(4)>0\) imply a second root \(C_2 \in (3,4)\).
+      \[
+        \therefore\ f(C_1)=0 \text{ for some } C_1\in(1,2),
+        \quad \text{and} \quad 
+        f(C_2)=0 \text{ for some } C_2\in(3,4).
+      \]
+      Hence, there exist at least two distinct real roots of \(f(x)=0\): one in \((1,2)\) and another in \((3,4)\).  
+      Each interval has width \(1\), and since these intervals do not overlap, the two roots \(C_1\) and \(C_2\) are distinct and lie in separate regions of \((1,4)\).
+    </p>
+  </details>
+
+  <details class="video">
+    <summary>Video solution</summary>
+    <p>
+      The video solution is available
+      <a href="https://drive.google.com/file/d/1osAxBw23_2eNHLnxuaP-Rkgd-wFpu7tT/view?usp=drive_link"
+         target="_blank" rel="noopener">here</a>.
+    </p>
+  </details>
+</li>
+
+
+
+
+    <!-- Challenging-7 -->
+    <li id="module3-challenging-7">
+      <a class="q-label" href="#module3-challenging-7">Module 3 — Challenging — 7</a><br>
+      A company produces and sells a product with a price-demand relationship \(D(p)=2000-50p.\)
+      The unit cost is constant at \(5.\) Determine whether a price in \([10,30]\) yields profit \$750.
+      <ol type="a">
+        <li>Find the profit function \(P(q)\), where \(q\) is quantity.</li>
+        <li>Show there exists a price in \([10,30]\) where \(P(q)=750.\)</li>
+      </ol>
+      <details class="answer"><summary>Answer</summary>
+        <p>Profit function \(P(q)=-0.02q^2+35q.\) There exists \(q\in(10,30)\) with \(P(q)=750\) by IVT.</p>
+      </details>
+      <details class="solution"><summary>Full Solution</summary>
+        <p>
+          From \(D(p)=2000-50p\), express price as \(p=40-0.02q.\)
+          The revenue function is
+          \[
+            R(q)=p\cdot q=(40-0.02q)q=-0.02q^2+40q.
+          \]
+          The cost function is \(C(q)=5q.\)
+          Hence the profit function is
+          \[
+            P(q)=R(q)-C(q)=-0.02q^2+35q.
+          \]
+          Since \(P\) is a polynomial, it is continuous everywhere.
+          Evaluate endpoints:
+          \[
+            P(10)= -0.02(10)^2 + 35(10)=348<750,\qquad
+            P(30)= -0.02(30)^2 + 35(30)=1032>750.
+          \]
+          Because \( P(10)< 750 < P(30)\) and \(P\) is continuous on \([10,30]\),
+          the Intermediate Value Theorem guarantees \(c\in(10,30)\) with \(P(c)=750.\)
+        </p>
+      </details>
     </li>
 
   </ol>
 </section>
-    
 
 
-
-
-
-
-<footer class="footer">
-      <small>© <span id="year"></span> Shinto Kai · CC BY 4.0</small>
-</footer>
-  </main>
-</div>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
+
 
 
